@@ -8,6 +8,13 @@
 
       <ElButton
         v-ripple
+        round
+      >
+        Rounded
+      </ElButton>
+
+      <ElButton
+        v-ripple
         type="primary"
       >
         Ripple

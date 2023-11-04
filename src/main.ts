@@ -8,6 +8,7 @@ import router from './router'
 
 import '@/assets/css/tailwind.css'
 import '@/styles/scss/index.scss'
+import 'element-plus/theme-chalk/dark/css-vars.css'
 
 const app = createApp(App)
 
