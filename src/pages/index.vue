@@ -15,7 +15,15 @@
           :key="opt.value"
           :label="opt.label"
           :value="opt.value"
-        />
+        >
+          <div class="flex items-center gap-2">
+            <div
+              class="w-[14px] h-[14px]"
+              :style="{ background: opt.value}"
+            />
+            {{ opt.label }}
+          </div>
+        </eloption>
       </ElSelect>
     </div>
 
@@ -37,6 +45,11 @@
     <Switch />
     <Datepicker />
     <Dialog />
+    <Toast />
+
+    <div class="flex justify-center mt-6 text-sm text-gray-500">
+      Powered by ♥️ Wildan Rizky
+    </div>
   </div>
 </template>
 
@@ -49,6 +62,7 @@ import Checkbox from '@/views/demos/Checkbox.vue';
 import Switch from '@/views/demos/Switch.vue';
 import Datepicker from '@/views/demos/Datepicker.vue';
 import Dialog from '@/views/demos/Dialog.vue';
+import Toast from '@/views/demos/Toast.vue';
 // eslint-disable-next-line import/no-unresolved
 import SunFilled from '~icons/tabler/sun-filled'
 // eslint-disable-next-line import/no-unresolved
@@ -66,10 +80,25 @@ const colorOptions = reactive([
     value: '#8442ff',
   }, {
     label: 'Navy',
-    value: '#192a56',
+    value: '#1e3799',
   }, {
     label: 'Orange',
     value: '#f0932b',
+  }, {
+    label: 'High Blue',
+    value: '#45aaf2',
+  }, {
+    label: 'Royal Blue',
+    value: '#4b7bec',
+  }, {
+    label: 'Aurora Green',
+    value: '#78e08f',
+  }, {
+    label: 'Tomato Red',
+    value: '#eb2f06',
+  }, {
+    label: 'Rogue Pink',
+    value: '#f8a5c2',
   },
 ])
 

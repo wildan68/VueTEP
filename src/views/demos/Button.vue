@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center gap-7">
     <label>Button</label>
-    <div class="flex items-center">
+    <div class="flex flex-wrap items-center gap-3">
       <ElButton>
         Default
       </ElButton>

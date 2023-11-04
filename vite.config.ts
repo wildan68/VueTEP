@@ -19,9 +19,14 @@ export default defineConfig({
     vue(),
     vueJsx(),
     AutoImport({
-      imports: ['vue', 'vue-router', '@vueuse/core', '@vueuse/math', 'pinia'],
+      imports: ['vue', 'vue-router', '@vueuse/core', '@vueuse/math', 'pinia', {
+        'vue3-toastify': [
+          'toast',
+        ],
+      }],
       vueTemplate: true,
       resolvers: [ElementPlusResolver()],
+
     }),
     Components({
       dirs: ['src/@core/components', 'src/views/demos'],

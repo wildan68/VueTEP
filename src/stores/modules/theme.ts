@@ -42,6 +42,11 @@ export const useThemeStore = defineStore('theme', {
         // ℹ️ This variable light primary 9 override dark mode and light mode
         root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-9`, this.isDark ? this[Actions.SET_COLOR_DARKER](hexColor, 80) : this[Actions.SET_COLOR_LIGHTER](hexColor, 80));
         root.style.setProperty(`${this.variables.PRIMARY_COLOR}-dark-2`, this[Actions.SET_COLOR_DARKER](hexColor, 2));
+
+        //  ℹ️ Override toastify
+        root.style.setProperty(`${this.variables.TOASTIFY_COLOR_LIGHT}`, this.isDark ? '#000' : '#FFF')
+        root.style.setProperty(`${this.variables.TOASTIFY_TEXT_COLOR_LIGHT}`, this.isDark ? '#FFF' : '#000')
+
         this.themeColor = hexColor;
       }
       catch(e) {
@@ -56,10 +61,18 @@ export const useThemeStore = defineStore('theme', {
         // ℹ️ This variable light primary 9 override dark mode and light mode
         if (this.isDark) {
           root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-9`, this[Actions.SET_COLOR_LIGHTER](this.themeColor, 80));
+          //  ℹ️ Override toastify
+          root.style.setProperty(`${this.variables.TOASTIFY_COLOR_LIGHT}`, '#FFF')
+          root.style.setProperty(`${this.variables.TOASTIFY_TEXT_COLOR_LIGHT}`, '#000')
+
           root.classList.remove('dark');
           this.isDark = false;
         } else {
           root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-9`, this[Actions.SET_COLOR_DARKER](this.themeColor, 80));
+          //  ℹ️ Override toastify
+          root.style.setProperty(`${this.variables.TOASTIFY_COLOR_LIGHT}`, '#000')
+          root.style.setProperty(`${this.variables.TOASTIFY_TEXT_COLOR_LIGHT}`, '#FFF')
+
           root.classList.add('dark');
           this.isDark = true;
         }

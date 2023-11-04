@@ -8,6 +8,9 @@ enum CSSVariables {
   DARK_COLOR = '--el-color-dark',
   LIGHT_COLOR = '--el-color-light',
   BACKGROUND_COLOR = '--el-color-background',
+
+  TOASTIFY_COLOR_LIGHT = '--toastify-color-light',
+  TOASTIFY_TEXT_COLOR_LIGHT = '--toastify-text-color-light'
 }
 
 export { CSSVariables }
