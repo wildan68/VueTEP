@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-4 p-6">
     <h2 class="font-bold text-primary">
-      Component
+      Element Plus + TailwindCSS Starter ✨
     </h2>
 
     <div class="flex items-center gap-7">
@@ -47,8 +47,16 @@
     <Dialog />
     <Toast />
 
-    <div class="flex justify-center mt-6 text-sm text-gray-500">
-      Powered by ♥️ Wildan Rizky
+    <div class="flex items-center justify-center gap-1 mt-6 text-sm text-gray-500">
+      Powered by 
+      <span class="text-danger">♥️</span> 
+      <a
+        href="https://instagram.com/wldan.rzky_"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Wildan Rizky
+      </a>
     </div>
   </div>
 </template>
