@@ -47,6 +47,9 @@
       "@validators": [
         "src/@core/utils/validators"
       ],
+      "@stores": [
+        "src/stores/index.ts"
+      ],
     },
     "lib": [
       "esnext",

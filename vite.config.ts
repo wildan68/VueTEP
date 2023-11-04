@@ -11,6 +11,7 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Pages from 'vite-plugin-pages'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import IconsResolver from 'unplugin-icons/resolver'
+import ElementPlus from 'unplugin-element-plus/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -33,6 +34,9 @@ export default defineConfig({
       ],
     }),
     DefineOptions(),
+    ElementPlus({
+      useSource: true,
+    }),
     Icons({
       // experimental
       autoInstall: true,
@@ -80,19 +84,12 @@ export default defineConfig({
       '@layouts': fileURLToPath(new URL('./src/@layouts', import.meta.url)),
       // '@images': fileURLToPath(new URL('./src/assets/images/', import.meta.url)),
       '@styles': fileURLToPath(new URL('./src/styles/', import.meta.url)),
-      '@configured-variables': fileURLToPath(new URL('./src/styles/variables/_template.scss', import.meta.url)),
       // '@axios': fileURLToPath(new URL('./src/plugins/axios', import.meta.url)),
       // '@validators': fileURLToPath(new URL('./src/@core/utils/validators', import.meta.url)),
       // 'apexcharts': fileURLToPath(new URL('node_modules/apexcharts-clevision', import.meta.url)),
+      '@stores': fileURLToPath(new URL('./src/stores/index.ts', import.meta.url)),
     },
   },
-  // css: {
-  //   preprocessorOptions: {
-  //     scss: {
-  //       additionalData: `@use "@/styles/scss/index.scss" as *;`,
-  //     },
-  //   },
-  // },
   build: {
     chunkSizeWarningLimit: 5000,
   },

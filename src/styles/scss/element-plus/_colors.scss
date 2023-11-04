@@ -1,0 +1,31 @@
+@use 'sass:map';
+
+$colors: () !default;
+$colors: map.deep-merge(
+  (
+    'primary': (
+      'base': #8442ff,
+    ),
+    'success': (
+      'base': #13ce66,
+    ),
+    'warning': (
+      'base': #ffba00,
+    ),
+    'danger': (
+      'base': #ff4949,
+    ),
+    'error': (
+      'base': #db2828,
+    ),
+    'info': (
+      'base': #42b8dd,
+    ),
+  ),
+  $colors
+);
+
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  // do not use same name, it will override.
+  $colors: $colors
+);

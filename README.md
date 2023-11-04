@@ -1,6 +1,6 @@
-# vue-ep-boilerplate
+# Vue 3 Element Plus + Tailwind (Combination) ✨
 
-This template should help get you started developing with Vue 3 in Vite.
+Starter Template for Vue 3 with modified Element Plus UI and Tailwind.
 
 ## Recommended IDE Setup
 
