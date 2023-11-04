@@ -1,0 +1,14 @@
+.el-dialog {
+  border-radius: 12px !important;
+
+  .el-dialog__headerbtn {
+    color: inherit !important;
+
+    &:hover {
+      color: var(--el-color-danger) !important;
+    }
+    .el-dialog__close {
+      color: inherit !important;
+    }
+  }
+}

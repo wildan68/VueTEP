@@ -36,6 +36,7 @@
     <Checkbox />
     <Switch />
     <Datepicker />
+    <Dialog />
   </div>
 </template>
 
@@ -47,6 +48,7 @@ import Radio from '@/views/demos/Radio.vue';
 import Checkbox from '@/views/demos/Checkbox.vue';
 import Switch from '@/views/demos/Switch.vue';
 import Datepicker from '@/views/demos/Datepicker.vue';
+import Dialog from '@/views/demos/Dialog.vue';
 // eslint-disable-next-line import/no-unresolved
 import SunFilled from '~icons/tabler/sun-filled'
 // eslint-disable-next-line import/no-unresolved
