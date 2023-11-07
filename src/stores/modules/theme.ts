@@ -44,7 +44,7 @@ export const useThemeStore = defineStore('theme', {
         root.style.setProperty(`${this.variables.PRIMARY_COLOR}-dark-2`, this[Actions.SET_COLOR_DARKER](hexColor, 2));
 
         //  ℹ️ Override toastify
-        root.style.setProperty(`${this.variables.TOASTIFY_COLOR_LIGHT}`, this.isDark ? '#000' : '#FFF')
+        root.style.setProperty(`${this.variables.TOASTIFY_COLOR_LIGHT}`, `var(${this.variables.BACKGROUND_COLOR})`)
         root.style.setProperty(`${this.variables.TOASTIFY_TEXT_COLOR_LIGHT}`, this.isDark ? '#FFF' : '#000')
 
         this.themeColor = hexColor;
@@ -62,7 +62,7 @@ export const useThemeStore = defineStore('theme', {
         if (this.isDark) {
           root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-9`, this[Actions.SET_COLOR_LIGHTER](this.themeColor, 80));
           //  ℹ️ Override toastify
-          root.style.setProperty(`${this.variables.TOASTIFY_COLOR_LIGHT}`, '#FFF')
+          root.style.setProperty(`${this.variables.TOASTIFY_COLOR_LIGHT}`, `var(${this.variables.BACKGROUND_COLOR})`)
           root.style.setProperty(`${this.variables.TOASTIFY_TEXT_COLOR_LIGHT}`, '#000')
 
           root.classList.remove('dark');
@@ -70,7 +70,7 @@ export const useThemeStore = defineStore('theme', {
         } else {
           root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-9`, this[Actions.SET_COLOR_DARKER](this.themeColor, 80));
           //  ℹ️ Override toastify
-          root.style.setProperty(`${this.variables.TOASTIFY_COLOR_LIGHT}`, '#000')
+          root.style.setProperty(`${this.variables.TOASTIFY_COLOR_LIGHT}`, `var(${this.variables.BACKGROUND_COLOR})`)
           root.style.setProperty(`${this.variables.TOASTIFY_TEXT_COLOR_LIGHT}`, '#FFF')
 
           root.classList.add('dark');

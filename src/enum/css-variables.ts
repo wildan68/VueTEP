@@ -7,7 +7,8 @@ enum CSSVariables {
   INFO_COLOR = '--el-color-info',
   DARK_COLOR = '--el-color-dark',
   LIGHT_COLOR = '--el-color-light',
-  BACKGROUND_COLOR = '--el-color-background',
+  BACKGROUND_COLOR = '--el-bg-color',
+  BACKGROUND_PAGE_COLOR = '--el-bg-color-page',
 
   TOASTIFY_COLOR_LIGHT = '--toastify-color-light',
   TOASTIFY_TEXT_COLOR_LIGHT = '--toastify-text-color-light'

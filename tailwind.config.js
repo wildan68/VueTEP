@@ -18,6 +18,7 @@ module.exports = {
         'dark': `var(${CSSVariables.DARK_COLOR})`,
         'light': `var(${CSSVariables.LIGHT_COLOR})`,
         'background': `var(${CSSVariables.BACKGROUND_COLOR})`,
+        'page-background': `var(${CSSVariables.BACKGROUND_PAGE_COLOR})`,
       },
     },
   },
