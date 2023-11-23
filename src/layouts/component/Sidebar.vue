@@ -12,7 +12,59 @@
           v-for="item in sidebarMenu"
           :key="item.key"
         >
-          {{ item.label }}
+          <div
+            v-ripple
+            class="flex items-center justify-between px-6 py-3 rounded-md cursor-pointer select-none"
+            :class="[
+              { 'bg-primary/20 text-primary' : item.childrenOpen },
+              { 'bg-primary text-white' : activeMenu === item.key },
+              { 'bg-primary/5 text-primary' : activeMenu !== item.key },
+            ]"
+            @click="onAction(item)"
+          >
+            <div class="flex items-center gap-2">
+              <Component
+                :is="item.icon"
+                v-if="item.icon && !item.children"
+              />
+              
+              <span>{{ item.label }}</span>
+            </div>
+
+            <template v-if="item.children">
+              <IconTablerChevronUp
+                class="transition-transform duration-300" 
+                :class="[!item.childrenOpen && 'transform rotate-180']"
+              />
+            </template> 
+          </div>
+
+          <!-- Children / Sub Menu -->
+          <div
+            v-if="item.childrenOpen"
+            class="flex flex-col gap-2 mt-2 ml-3 sidebar-items__open"
+          >
+            <div
+              v-for="child in item.children"
+              :key="child.key"
+              v-ripple
+              class="px-6 py-3 text-sm rounded-md cursor-pointer select-none"
+              :class="[
+                { 'bg-primary/5 text-primary' : activeMenu !== child.key },
+                { 'bg-primary text-white' : activeMenu === child.key },
+              ]"
+              @click="onAction(child)"
+            >
+              <div class="flex items-center gap-2">
+                <Component
+                  :is="child.icon"
+                  v-if="child.icon"
+                />
+              
+                <span>{{ child.label }}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -21,7 +73,29 @@
 
 <script setup lang="ts">
 import SIZE from '@/constants/SIZE'
-import { sidebarMenu } from '@core/sidebar-menu'
+import { useSidebar } from '@core/sidebarmenu'
+import type { ISidebar } from '@/types/sidebar';
 
 const { SIDEBAR_WIDTH } = SIZE
+const { sidebarMenu, openChildren } = useSidebar()
+
+const route = useRoute()
+
+const onAction = (items: ISidebar) => {
+  if (items.children) {
+    return openChildren(items.key)
+  }
+  
+  if (!items.action) {
+    return toast.info('Action not found')
+  }
+    
+  return items.action()
+}
+
+const activeMenu = computed(() => {
+  const { path } = route
+  
+  return path.split('/').pop() || 'dashboard'
+})
 </script>

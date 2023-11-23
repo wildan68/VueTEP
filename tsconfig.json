@@ -19,6 +19,7 @@
       "vite-plugin-vue-layouts/client",
       "element-plus/global",
       "vue3-toastify/global",
+      "unplugin-icons/types/vue",
     ],
     "paths": {
       "@/*": [

@@ -1,3 +1,3 @@
 export default {
-  SIDEBAR_WIDTH: 200,
+  SIDEBAR_WIDTH: 250,
 }

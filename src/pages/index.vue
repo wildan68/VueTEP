@@ -71,9 +71,7 @@ import Switch from '@/views/demos/Switch.vue';
 import Datepicker from '@/views/demos/Datepicker.vue';
 import Dialog from '@/views/demos/Dialog.vue';
 import Toast from '@/views/demos/Toast.vue';
-// eslint-disable-next-line import/no-unresolved
 import SunFilled from '~icons/tabler/sun-filled'
-// eslint-disable-next-line import/no-unresolved
 import MoonFilled from '~icons/tabler/moon-filled'
 import { useThemeStore } from '@stores'
 import { Actions } from '@/enum/stores';

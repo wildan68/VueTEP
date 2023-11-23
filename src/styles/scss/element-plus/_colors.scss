@@ -1,5 +1,6 @@
 @use 'sass:map';
 
+// Color with RGB not HEX
 $colors: () !default;
 $colors: map.deep-merge(
   (

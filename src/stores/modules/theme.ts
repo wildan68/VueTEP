@@ -30,6 +30,14 @@ export const useThemeStore = defineStore('theme', {
       return '#' + (0x1000000 + (R > 0 ? R > 255 ? 255 : R : 0) * 0x10000 + (G > 0 ? G > 255 ? 255 : G : 0) * 0x100 + (B > 0 ? B > 255 ? 255 : B : 0)).toString(16).slice(1);
     },
 
+    [Actions.CONVERT_TO_RGB] (hexColor: string) {
+      const color = hexColor.replace('#', '');
+      const R = parseInt(color.substring(0, 2), 16);
+      const G = parseInt(color.substring(2, 4), 16);
+      const B = parseInt(color.substring(4, 6), 16);
+      return `${R}, ${G}, ${B}`;
+    },
+
     [Actions.SET_THEME_COLOR] (hexColor: string) {
       try {
         const root = document.documentElement;
@@ -42,6 +50,9 @@ export const useThemeStore = defineStore('theme', {
         // ℹ️ This variable light primary 9 override dark mode and light mode
         root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-9`, this.isDark ? this[Actions.SET_COLOR_DARKER](hexColor, 80) : this[Actions.SET_COLOR_LIGHTER](hexColor, 80));
         root.style.setProperty(`${this.variables.PRIMARY_COLOR}-dark-2`, this[Actions.SET_COLOR_DARKER](hexColor, 2));
+
+        //NOTE - This for rgb primary color
+        root.style.setProperty(`${this.variables.PRIMARY_COLOR}-rgb`, this[Actions.CONVERT_TO_RGB](hexColor));
 
         //  ℹ️ Override toastify
         root.style.setProperty(`${this.variables.TOASTIFY_COLOR_LIGHT}`, `var(${this.variables.BACKGROUND_COLOR})`)

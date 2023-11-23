@@ -42,6 +42,7 @@ module.exports = {
       ignore: [
         '~pages$',
         'virtual:generated-layouts',
+        '~icons',
 
         // Ignore vite's ?raw imports
         '.*\?raw',
@@ -74,7 +75,7 @@ module.exports = {
     // NOTE this rule only supported in SFC,  Users of the unplugin-vue-define-options should disable that rule: https://github.com/vuejs/eslint-plugin-vue/issues/1886
     // 'vue/no-duplicate-attr-inheritance': 'error',
     'vue/no-empty-component-block': 'error',
-    'vue/no-multiple-objects-in-class': 'error',
+    'vue/no-multiple-objects-in-class': 'off',
     'vue/no-reserved-component-names': 'error',
     'vue/no-template-target-blank': 'error',
     'vue/no-useless-mustaches': 'error',

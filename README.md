@@ -44,3 +44,7 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Issue Unplugin Icons
+
+https://github.com/unplugin/unplugin-icons/issues/204

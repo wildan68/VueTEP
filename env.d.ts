@@ -2,6 +2,7 @@
 /// <reference path="components.d.ts" />
 /// <reference types="vite/client" />
 /// <reference types="vite-plugin-pages/client" />
+/// <reference types="unplugin-icons/types/vue" />
 
 import 'vue-router'
 
