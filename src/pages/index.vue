@@ -1,8 +1,10 @@
 <template>
-  <div class="flex flex-col gap-4 p-6">
+  <div class="flex flex-col gap-4">
     <h2 class="font-bold text-primary">
       Element Plus + TailwindCSS Starter ✨
     </h2>
+
+    Warna {{ colorTheme }}
 
     <div class="flex items-center gap-7">
       <label>Theme Color</label>

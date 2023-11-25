@@ -4,9 +4,9 @@ import { CSSVariables } from './src/enum/css-variables'
 function withOpacity (variableName) {
   return ({ opacityValue }) => {
     if (opacityValue !== undefined) {
-      return `rgba(${variableName}, ${opacityValue})`
+      return `rgba(var(${variableName}-rgb), ${opacityValue})`
     }
-    return `rgb(${variableName})`
+    return `var(${variableName})`
   }
 }
 
@@ -18,16 +18,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': withOpacity(`var(${CSSVariables.PRIMARY_COLOR}-rgb)`),
-        'success': withOpacity(`var(${CSSVariables.SUCCESS_COLOR}-rgb)`),
-        'danger': withOpacity(`var(${CSSVariables.DANGER_COLOR}-rgb)`),
-        'error': withOpacity(`var(${CSSVariables.ERROR_COLOR}-rgb)`),
-        'warning': withOpacity(`var(${CSSVariables.WARNING_COLOR}-rgb)`),
-        'info': withOpacity(`var(${CSSVariables.INFO_COLOR}-rgb)`),
-        'dark': withOpacity(`var(${CSSVariables.DARK_COLOR}-rgb)`),
-        'light': withOpacity(`var(${CSSVariables.LIGHT_COLOR}-rgb)`),
-        'background': withOpacity(`var(${CSSVariables.BACKGROUND_COLOR}-rgb)`),
-        'page-background': withOpacity(`var(${CSSVariables.BACKGROUND_PAGE_COLOR}-rgb)`),
+        'primary': withOpacity(CSSVariables.PRIMARY_COLOR),
+        'success': withOpacity(CSSVariables.SUCCESS_COLOR),
+        'danger': withOpacity(CSSVariables.DANGER_COLOR),
+        'error': withOpacity(CSSVariables.ERROR_COLOR),
+        'warning': withOpacity(CSSVariables.WARNING_COLOR),
+        'info': withOpacity(CSSVariables.INFO_COLOR),
+        'dark': withOpacity(CSSVariables.DARK_COLOR),
+        'light': withOpacity(CSSVariables.LIGHT_COLOR),
+        'background': withOpacity(CSSVariables.BACKGROUND_COLOR),
+        'page-background': withOpacity(CSSVariables.BACKGROUND_PAGE_COLOR),
       },
     },
   },

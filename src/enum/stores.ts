@@ -6,4 +6,8 @@ enum Actions {
   CONVERT_TO_RGB = 'convertToRGB',
 }
 
-export { Actions }
+enum Getters {
+  GET_THEME_VARIABLES = 'getThemeVariables',
+}
+
+export { Actions, Getters }

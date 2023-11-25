@@ -5,7 +5,7 @@ import { CSSVariables } from '@/enum/css-variables'
 export const useThemeStore = defineStore('theme', {
   state: () => ({
     variables: CSSVariables,
-    themeColor: getComputedStyle(document.body).getPropertyValue('--el-color-primary'),
+    themeColor: getComputedStyle(document.body).getPropertyValue(CSSVariables.PRIMARY_COLOR),
     isDark: document.documentElement.classList.contains('dark'),
   }),
   actions: {
@@ -69,6 +69,11 @@ export const useThemeStore = defineStore('theme', {
       try {
         const root = document.documentElement;
 
+        root.style.setProperty(this.variables.PRIMARY_COLOR, this.themeColor);
+        root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-3`, this[Actions.SET_COLOR_LIGHTER](this.themeColor, 9));
+        root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-5`, this[Actions.SET_COLOR_LIGHTER](this.themeColor, 8));
+        root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-7`, this[Actions.SET_COLOR_LIGHTER](this.themeColor, 7));
+        root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-8`, this[Actions.SET_COLOR_LIGHTER](this.themeColor, 5));
         // ℹ️ This variable light primary 9 override dark mode and light mode
         if (this.isDark) {
           root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-9`, this[Actions.SET_COLOR_LIGHTER](this.themeColor, 80));
