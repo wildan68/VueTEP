@@ -20,6 +20,7 @@
       "element-plus/global",
       "vue3-toastify/global",
       "unplugin-icons/types/vue",
+      "@morev/vue-transitions/types/volar",
     ],
     "paths": {
       "@/*": [

@@ -1,40 +1,11 @@
+* {
+  font-size: 14px;
+}
+
 a {
   color: var(--el-color-primary-light-3);
 
   &:hover {
     color: var(--el-color-primary);
-  }
-}
-
-.sidebar-items {
-  // animation children
-  @keyframes openChild {
-    0% {
-      opacity: 0;
-      transform: translateX(-10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes closeChild {
-    0% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateX(-10px);
-    }
-  }
-
-  &__open {
-    animation: openChild 0.3s ease-in-out;
-  }
-
-  &__close {
-    animation: closeChild 0.3s ease-in-out;
   }
 }

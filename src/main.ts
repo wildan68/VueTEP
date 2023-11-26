@@ -3,6 +3,7 @@ import { createPinia } from 'pinia'
 import ElementPlus from '@/plugins/element-plus'
 import Ripple from '@/plugins/ripple'
 import Toastify from '@/plugins/toastify'
+import MoreV from '@/plugins/morev'
 
 import App from './App.vue'
 import router from './router'
@@ -21,5 +22,7 @@ app.use(ElementPlus)
 app.use(Toastify)
 
 app.use(Ripple)
+
+app.use(MoreV)
 
 app.mount('#app')

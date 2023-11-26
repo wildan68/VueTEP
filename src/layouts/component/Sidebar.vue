@@ -40,31 +40,33 @@
           </div>
 
           <!-- Children / Sub Menu -->
-          <div
-            v-if="item.childrenOpen"
-            class="flex flex-col gap-2 mt-2 ml-3 sidebar-items__open"
-          >
+          <TransitionSlide>
             <div
-              v-for="child in item.children"
-              :key="child.key"
-              v-ripple
-              class="px-6 py-3 text-sm rounded-md cursor-pointer select-none"
-              :class="[
-                { 'bg-primary/5 text-primary' : activeMenu !== child.key },
-                { 'bg-primary text-white' : activeMenu === child.key },
-              ]"
-              @click="onAction(child)"
+              v-if="item.childrenOpen"
+              class="flex flex-col gap-2 mt-2 ml-3"
             >
-              <div class="flex items-center gap-2">
-                <Component
-                  :is="child.icon"
-                  v-if="child.icon"
-                />
+              <div
+                v-for="child in item.children"
+                :key="child.key"
+                v-ripple
+                class="px-6 py-3 text-sm rounded-md cursor-pointer select-none"
+                :class="[
+                  { 'bg-primary/5 text-primary' : activeMenu !== child.key },
+                  { 'bg-primary text-white' : activeMenu === child.key },
+                ]"
+                @click="onAction(child)"
+              >
+                <div class="flex items-center gap-2">
+                  <Component
+                    :is="child.icon"
+                    v-if="child.icon"
+                  />
               
-                <span>{{ child.label }}</span>
+                  <span>{{ child.label }}</span>
+                </div>
               </div>
             </div>
-          </div>
+          </TransitionSlide>
         </div>
       </div>
     </div>

@@ -23,6 +23,12 @@ export default defineConfig({
         'vue3-toastify': [
           'toast',
         ],
+        '@morev/vue-transitions': [
+          'TransitionFade',
+          'TransitionExpand',
+          'TransitionScale',
+          'TransitionSlide',
+        ],
       }],
       vueTemplate: true,
       resolvers: [ElementPlusResolver()],

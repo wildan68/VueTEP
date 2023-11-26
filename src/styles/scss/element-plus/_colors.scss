@@ -23,7 +23,10 @@ $colors: map.deep-merge(
     ),
     'background': (
       'base': #dfe6e9,
-    )
+    ),
+    'muted': (
+      'base': #b2bec3,
+    ),
   ),
   $colors
 );

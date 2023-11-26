@@ -11,6 +11,7 @@ function withOpacity (variableName) {
 }
 
 module.exports = {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx,vue}",
@@ -28,6 +29,9 @@ module.exports = {
         'light': withOpacity(CSSVariables.LIGHT_COLOR),
         'background': withOpacity(CSSVariables.BACKGROUND_COLOR),
         'page-background': withOpacity(CSSVariables.BACKGROUND_PAGE_COLOR),
+        'secondary': `var(${CSSVariables.SECONDARY_COLOR})`,
+        'placeholder': `var(${CSSVariables.PLACEHOLDER_COLOR})`,
+        'disabled': `var(${CSSVariables.DISABLED_COLOR})`,
       },
     },
   },

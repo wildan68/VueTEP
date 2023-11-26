@@ -8,7 +8,12 @@
     class="p-6"
   >
     <RouterView v-slot="{ Component }">
-      <Component :is="Component" />
+      <TransitionExpand
+        appear
+        @before-enter="loadPage"
+      >
+        <Component :is="Component" />
+      </TransitionExpand>
     </RouterView>
   </div>
 </template>
@@ -19,4 +24,6 @@ import Header from '@layouts/component/Header.vue'
 import SIZE from '@/constants/SIZE'
 
 const { SIDEBAR_WIDTH } = SIZE
+
+const loadPage = () => console.log('hello')
 </script>

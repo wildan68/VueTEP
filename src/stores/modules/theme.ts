@@ -48,7 +48,7 @@ export const useThemeStore = defineStore('theme', {
         root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-7`, this[Actions.SET_COLOR_LIGHTER](hexColor, 7));
         root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-8`, this[Actions.SET_COLOR_LIGHTER](hexColor, 5));
         // ℹ️ This variable light primary 9 override dark mode and light mode
-        root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-9`, this.isDark ? this[Actions.SET_COLOR_DARKER](hexColor, 80) : this[Actions.SET_COLOR_LIGHTER](hexColor, 80));
+        root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-9`, this.isDark ? this[Actions.SET_COLOR_DARKER](hexColor, 70) : this[Actions.SET_COLOR_LIGHTER](hexColor, 70));
         root.style.setProperty(`${this.variables.PRIMARY_COLOR}-dark-2`, this[Actions.SET_COLOR_DARKER](hexColor, 2));
 
         //NOTE - This for rgb primary color
@@ -74,9 +74,14 @@ export const useThemeStore = defineStore('theme', {
         root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-5`, this[Actions.SET_COLOR_LIGHTER](this.themeColor, 8));
         root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-7`, this[Actions.SET_COLOR_LIGHTER](this.themeColor, 7));
         root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-8`, this[Actions.SET_COLOR_LIGHTER](this.themeColor, 5));
+
+        root.style.setProperty(`${this.variables.PRIMARY_COLOR}-dark-2`, this[Actions.SET_COLOR_DARKER](this.themeColor, 2));
+
+        //NOTE - This for rgb primary color
+        root.style.setProperty(`${this.variables.PRIMARY_COLOR}-rgb`, this[Actions.CONVERT_TO_RGB](this.themeColor));
         // ℹ️ This variable light primary 9 override dark mode and light mode
         if (this.isDark) {
-          root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-9`, this[Actions.SET_COLOR_LIGHTER](this.themeColor, 80));
+          root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-9`, this[Actions.SET_COLOR_LIGHTER](this.themeColor, 70));
           //  ℹ️ Override toastify
           root.style.setProperty(`${this.variables.TOASTIFY_COLOR_LIGHT}`, `var(${this.variables.BACKGROUND_COLOR})`)
           root.style.setProperty(`${this.variables.TOASTIFY_TEXT_COLOR_LIGHT}`, '#000')
@@ -84,7 +89,7 @@ export const useThemeStore = defineStore('theme', {
           root.classList.remove('dark');
           this.isDark = false;
         } else {
-          root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-9`, this[Actions.SET_COLOR_DARKER](this.themeColor, 80));
+          root.style.setProperty(`${this.variables.PRIMARY_COLOR}-light-9`, this[Actions.SET_COLOR_DARKER](this.themeColor, 70));
           //  ℹ️ Override toastify
           root.style.setProperty(`${this.variables.TOASTIFY_COLOR_LIGHT}`, `var(${this.variables.BACKGROUND_COLOR})`)
           root.style.setProperty(`${this.variables.TOASTIFY_TEXT_COLOR_LIGHT}`, '#FFF')

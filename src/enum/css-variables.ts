@@ -9,6 +9,9 @@ enum CSSVariables {
   LIGHT_COLOR = '--el-color-light',
   BACKGROUND_COLOR = '--el-bg-color',
   BACKGROUND_PAGE_COLOR = '--el-bg-color-page',
+  SECONDARY_COLOR = '--el-text-color-secondary',
+  PLACEHOLDER_COLOR = '--el-text-color-placeholder',
+  DISABLED_COLOR = '--el-text-color-disabled',
 
   TOASTIFY_COLOR_LIGHT = '--toastify-color-light',
   TOASTIFY_TEXT_COLOR_LIGHT = '--toastify-text-color-light'

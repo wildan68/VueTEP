@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sticky top-0 flex items-center justify-end gap-2 px-6 py-3 border-b bg-background"
+    class="sticky top-0 flex items-center justify-end gap-2 px-6 py-3 border-b bg-background dark:border-b-slate-800"
     :style="{
       marginLeft: SIDEBAR_WIDTH + 'px',
     }"
@@ -35,6 +35,18 @@
       </eloption>
     </ElSelect>
 
+    <!-- Dark Mode -->
+    <ElButton
+      v-ripple
+      type="primary"
+      circle
+      plain
+      @click="isDark = !isDark"
+    >
+      <IconTablerMoonFilled v-if="isDark" />
+      <IconTablerSunFilled v-else />
+    </ElButton>
+
     <!-- Avatar -->
     <div
       ref="profilePopupRef"
@@ -49,12 +61,45 @@
       </ElAvatar>
 
       <!-- Profile Popup -->
-      <div
-        v-if="profilePopup"
-        class="absolute right-0 p-4 rounded-md shadow-lg top-full bg-page-background min-w-[200px] mt-4"
-      >
-        Hello Profile
-      </div>
+      <TransitionSlide>
+        <div
+          v-if="profilePopup"
+          class="absolute right-0 p-4 rounded-md shadow-lg top-full bg-page-background min-w-[200px] mt-4 flex flex-col gap-4"
+        >
+          <div class="flex gap-2">
+            <ElAvatar
+              size="default"
+              class="border-none"
+            >
+              VT
+            </ElAvatar>
+
+            <div class="flex flex-col">
+              <span class="font-semibold text-sm">User</span>
+              <span class="text-xs text-placeholder">Frontend Developer</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col">
+            <div
+              v-for="menu in profileMenu"
+              :key="menu.label"
+              v-ripple
+              class="cursor-pointer p-2 rounded-lg flex items-center gap-2"
+              :class="[
+                { 'hover:bg-primary/10 hover:text-primary' : !menu.color },
+                menu.color
+              ]"
+            >
+              <template v-if="menu.icon">
+                <Component :is="menu.icon" />
+              </template>
+
+              {{ menu.label }}
+            </div>
+          </div>
+        </div>
+      </TransitionSlide>
     </div>
   </div>
 </template>
@@ -63,6 +108,7 @@
 import SIZE from '@/constants/SIZE'
 import { useThemeStore } from '@stores'
 import { Actions } from '@/enum/stores';
+import type { FunctionalComponent, SVGAttributes } from 'vue'
 
 const themeStore = useThemeStore();
 const colorTheme = ref<string>(themeStore.themeColor);
@@ -72,7 +118,7 @@ const isDark = ref<boolean>(themeStore.isDark);
 const profilePopup = ref<boolean>(false);
 const profilePopupRef = ref<HTMLElement | null>(null);
 
-const colorOptions = reactive([
+const colorOptions = reactive<{ label: string; value: string }[]>([
   {
     label: 'Purple',
     value: '#8442ff',
@@ -99,6 +145,24 @@ const colorOptions = reactive([
     value: '#f8a5c2',
   },
 ])
+
+const profileMenu = reactive<{ 
+  label: string; 
+  icon?: FunctionalComponent<SVGAttributes>;
+  color?: string; 
+  action: () => void
+    }[]>([
+      {
+        label: 'Settings',
+        icon: defineAsyncComponent(() => import('~icons/tabler/settings')),
+        action: () => console.log('Settings'),
+      }, {
+        label: 'Logout',
+        icon: defineAsyncComponent(() => import('~icons/tabler/logout')),
+        color: 'text-danger hover:bg-danger/10 hover:text-danger',
+        action: () => console.log('Logout'),
+      },
+    ])
 
 watch(
   colorTheme,
