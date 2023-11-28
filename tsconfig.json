@@ -21,6 +21,7 @@
       "vue3-toastify/global",
       "unplugin-icons/types/vue",
       "@morev/vue-transitions/types/volar",
+      "unplugin-fonts/client",
     ],
     "paths": {
       "@/*": [

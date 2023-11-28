@@ -1,16 +1,16 @@
 <template>
   <ContentCard>
     <template #title>
-      Button Component
+      Input Component
     </template>
     <template #subtitle>
-      Default element plus button components
+      Default element plus input components
     </template>
-
-    <Button />
+  
+    <Input />
   </ContentCard>
 </template>
-
+  
 <script setup lang="ts">
-import Button from '@/views/demos/Button.vue';
+import Input from '@/views/demos/Input.vue';
 </script>

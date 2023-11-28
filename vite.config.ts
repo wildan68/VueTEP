@@ -12,6 +12,7 @@ import Pages from 'vite-plugin-pages'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import IconsResolver from 'unplugin-icons/resolver'
 import ElementPlus from 'unplugin-element-plus/vite'
+import Unfonts from 'unplugin-fonts/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -35,7 +36,7 @@ export default defineConfig({
 
     }),
     Components({
-      dirs: ['src/@core/components', 'src/views/demos'],
+      dirs: ['src/components', 'src/views/demos'],
       dts: true,
       resolvers: [
         ElementPlusResolver(), 
@@ -85,6 +86,14 @@ export default defineConfig({
         ...routes,
       ],
     }),
+    Unfonts({
+      google: {
+        families: [
+          // families can be either strings (only regular 400 will be loaded)
+          'Montserrat',
+        ],
+      },
+    }),
   ],
   define: { 'process.env': {} },
   resolve: {
@@ -93,7 +102,7 @@ export default defineConfig({
       // '@themeConfig': fileURLToPath(new URL('./themeConfig.ts', import.meta.url)),
       '@core': fileURLToPath(new URL('./src/@core', import.meta.url)),
       '@layouts': fileURLToPath(new URL('./src/layouts', import.meta.url)),
-      // '@images': fileURLToPath(new URL('./src/assets/images/', import.meta.url)),
+      '@images': fileURLToPath(new URL('./src/assets/images/', import.meta.url)),
       '@styles': fileURLToPath(new URL('./src/styles/', import.meta.url)),
       // '@axios': fileURLToPath(new URL('./src/plugins/axios', import.meta.url)),
       // '@validators': fileURLToPath(new URL('./src/@core/utils/validators', import.meta.url)),

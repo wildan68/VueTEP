@@ -1,60 +1,37 @@
 <template>
-  <div class="flex flex-col gap-4">
-    <h2 class="font-bold text-primary">
-      Element Plus + TailwindCSS Starter ✨
-    </h2>
-    
-    <Input />
-    <Button />
-    <Select />
-    <Radio />
-    <Checkbox />
-    <Switch />
-    <Datepicker />
-    <Dialog />
-    <Toast />
+  <div class="flex flex-col gap-6">
+    <div class="flex items-stretch gap-6">
+      <ContentCard class="flex-1">
+        <h2 class="text-2xl font-bold text-primary">
+          Welcome to VueTEP ✨
+        </h2>
+        <span class="text-placeholder">
+          Vue, Tailwind, Element Plus and Extend Component's combination for the best developing frontend experience
+        </span>
+      </ContentCard>
 
-    <div class="flex items-center justify-center gap-1 mt-6 text-sm text-gray-500">
-      Powered by 
-      <span class="text-danger">♥️</span> 
-      <a
-        href="https://instagram.com/wldan.rzky_"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Wildan Rizky
-      </a>
+      <div class="relative flex items-center w-1/3 p-6 overflow-hidden text-white rounded-lg bg-gradient-to-r from-primary/80 to-primary">
+        <img
+          :src="PlanetDraw"
+          class="absolute top-0 bottom-0 right-0 w-[50%] select-none"
+        >
+        <span class="text-3xl font-bold">Easy & Fast</span>
+      </div>
     </div>
+
+    <ContentCard>
+      <template #title>
+        <span class="text-xl font-extrabold cursor-pointer text-warning">#</span> Usage
+      </template>
+      <template #subtitle>
+        How to use this template
+      </template>
+
+      <div>Usage this UI</div>
+    </ContentCard>
   </div>
 </template>
 
 <script setup lang="ts">
-import Input from '@/views/demos/Input.vue';
-import Button from '@/views/demos/Button.vue';
-import Select from '@/views/demos/Select.vue';
-import Radio from '@/views/demos/Radio.vue';
-import Checkbox from '@/views/demos/Checkbox.vue';
-import Switch from '@/views/demos/Switch.vue';
-import Datepicker from '@/views/demos/Datepicker.vue';
-import Dialog from '@/views/demos/Dialog.vue';
-import Toast from '@/views/demos/Toast.vue';
-import { useThemeStore } from '@stores'
-import { Actions } from '@/enum/stores';
-
-const themeStore = useThemeStore();
-const colorTheme = ref<string>(themeStore.themeColor);
-const isDark = ref<boolean>(themeStore.isDark);
-
-watch(
-  colorTheme,
-  (val) => themeStore[Actions.SET_THEME_COLOR](val),
-)
-
-watch(
-  isDark,
-  () => themeStore[Actions.TOGGLE_DARK_MODE](),
-)
-
-
-// // create template ref, Create <IconTablerSunFilled /> component
+import PlanetDraw from '@images/planet-draw.png'
 </script>

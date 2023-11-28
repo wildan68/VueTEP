@@ -1,16 +1,16 @@
 <template>
   <ContentCard>
     <template #title>
-      Button Component
+      Switch Component
     </template>
     <template #subtitle>
-      Default element plus button components
+      Default element plus switch components
     </template>
-
-    <Button />
+          
+    <Switch />
   </ContentCard>
 </template>
-
+          
 <script setup lang="ts">
-import Button from '@/views/demos/Button.vue';
+import Switch from '@/views/demos/Switch.vue';
 </script>

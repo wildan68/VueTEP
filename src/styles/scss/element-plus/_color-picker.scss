@@ -1,0 +1,17 @@
+.el-color-picker__trigger {
+  .el-color-picker__color {
+    border-radius: 999px !important;
+
+    .el-color-picker__color-inner {
+      border-radius: 999px !important;
+
+      .el-icon.el-color-picker__icon.is-icon-arrow-down {
+        display: none !important;
+      }
+
+      .el-icon.el-color-picker__empty.is-icon-close {
+        display: none !important;
+      }
+    }
+  }
+}

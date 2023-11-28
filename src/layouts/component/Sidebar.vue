@@ -14,18 +14,18 @@
         >
           <div
             v-ripple
-            class="flex items-center justify-between px-6 py-3 rounded-md cursor-pointer select-none"
+            class="flex items-center justify-between px-6 py-3 transition-colors duration-300 rounded-md cursor-pointer select-none"
             :class="[
-              { 'bg-primary/20 text-primary' : item.childrenOpen },
-              { 'bg-primary text-white' : activeMenu === item.key },
-              { 'bg-primary/5 text-primary' : activeMenu !== item.key },
+              { 'bg-gray-100 text-gray-500 dark:bg-zinc-800' : item.childrenOpen },
+              { 'bg-gradient-to-r from-primary/80 to-primary text-white' : activeMenu === item.key },
+              { 'text-gray-500' : activeMenu !== item.key },
             ]"
             @click="onAction(item)"
           >
             <div class="flex items-center gap-2">
               <Component
                 :is="item.icon"
-                v-if="item.icon && !item.children"
+                v-if="item.icon"
               />
               
               <span>{{ item.label }}</span>
@@ -40,7 +40,10 @@
           </div>
 
           <!-- Children / Sub Menu -->
-          <TransitionSlide>
+          <TransitionSlide
+            appear
+            easing="ease-out"
+          >
             <div
               v-if="item.childrenOpen"
               class="flex flex-col gap-2 mt-2 ml-3"
@@ -49,10 +52,10 @@
                 v-for="child in item.children"
                 :key="child.key"
                 v-ripple
-                class="px-6 py-3 text-sm rounded-md cursor-pointer select-none"
+                class="px-6 py-3 text-sm transition-colors duration-300 rounded-md cursor-pointer select-none"
                 :class="[
-                  { 'bg-primary/5 text-primary' : activeMenu !== child.key },
-                  { 'bg-primary text-white' : activeMenu === child.key },
+                  { 'text-gray-500' : activeMenu !== child.key },
+                  { 'bg-gradient-to-r from-primary/80 to-primary text-white' : activeMenu === child.key },
                 ]"
                 @click="onAction(child)"
               >

@@ -1,39 +1,50 @@
 <template>
   <div
-    class="sticky top-0 flex items-center justify-end gap-2 px-6 py-3 border-b bg-background dark:border-b-slate-800"
+    class="sticky z-50 flex items-center justify-end gap-2 px-6 py-3 rounded-lg shadow-lg top-3 bg-background"
     :style="{
-      marginLeft: SIDEBAR_WIDTH + 'px',
+      marginLeft: (SIDEBAR_WIDTH + 24) + 'px',
+      marginRight: '24px',
     }"
   >
     <!-- Theme Color -->
-    <ElSelect
-      v-model="colorTheme"
-      placeholder="Select One"
-      size="large"
-      class="w-[150px]"
-    >
-      <template #prefix>
-        <div
-          class="w-[14px] h-[14px]"
-          :style="{ background: colorTheme }"
-        />
-      </template>
-      
-      <ElOption
-        v-for="opt in colorOptions"
-        :key="opt.value"
-        :label="opt.label"
-        :value="opt.value"
+    <div class="flex gap-2 p-2 border rounded-md dark:border-zinc-500">
+      <!-- Select Color -->
+      <ElSelect
+        v-model="colorTheme"
+        placeholder="Select One"
+        size="default"
+        class="w-[150px]"
       >
-        <div class="flex items-center gap-2">
+        <template #prefix>
           <div
             class="w-[14px] h-[14px]"
-            :style="{ background: opt.value}"
+            :style="{ background: colorTheme }"
           />
-          {{ opt.label }}
-        </div>
-      </eloption>
-    </ElSelect>
+        </template>
+      
+        <ElOption
+          v-for="opt in colorOptions"
+          :key="opt.value"
+          :label="opt.label"
+          :value="opt.value"
+        >
+          <div class="flex items-center gap-2">
+            <div
+              class="w-[14px] h-[14px]"
+              :style="{ background: opt.value}"
+            />
+            {{ opt.label }}
+          </div>
+        </eloption>
+      </ElSelect>
+
+      <!-- Custom Color -->
+      <ElColorPicker
+        v-model="colorTheme"
+        size="default"
+        @active-change="(e) => themeStore[Actions.SET_THEME_COLOR](e as string)"
+      />
+    </div>
 
     <!-- Dark Mode -->
     <ElButton
@@ -64,7 +75,7 @@
       <TransitionSlide>
         <div
           v-if="profilePopup"
-          class="absolute right-0 p-4 rounded-md shadow-lg top-full bg-page-background min-w-[200px] mt-4 flex flex-col gap-4"
+          class="absolute right-0 p-4 rounded-md shadow-lg top-full bg-background min-w-[200px] mt-4 flex flex-col gap-4"
         >
           <div class="flex gap-2">
             <ElAvatar
@@ -75,8 +86,8 @@
             </ElAvatar>
 
             <div class="flex flex-col">
-              <span class="font-semibold text-sm">User</span>
-              <span class="text-xs text-placeholder">Frontend Developer</span>
+              <span class="text-sm font-semibold">User</span>
+              <span class="text-xs text-placeholder">Administrator</span>
             </div>
           </div>
 
@@ -85,7 +96,7 @@
               v-for="menu in profileMenu"
               :key="menu.label"
               v-ripple
-              class="cursor-pointer p-2 rounded-lg flex items-center gap-2"
+              class="flex items-center gap-2 p-2 rounded-lg cursor-pointer"
               :class="[
                 { 'hover:bg-primary/10 hover:text-primary' : !menu.color },
                 menu.color

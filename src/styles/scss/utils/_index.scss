@@ -1,5 +1,6 @@
 * {
   font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a {
@@ -8,4 +9,14 @@ a {
   &:hover {
     color: var(--el-color-primary);
   }
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 18px;
+}
+
+.text-higlight {
+  background-color: var(--el-color-background);
 }

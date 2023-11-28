@@ -1,16 +1,16 @@
 <template>
   <ContentCard>
     <template #title>
-      Button Component
+      Toast Component
     </template>
     <template #subtitle>
-      Default element plus button components
+      Default element plus toast components
     </template>
-
-    <Button />
+                
+    <Toast />
   </ContentCard>
 </template>
-
+                
 <script setup lang="ts">
-import Button from '@/views/demos/Button.vue';
+import Toast from '@/views/demos/Toast.vue';
 </script>

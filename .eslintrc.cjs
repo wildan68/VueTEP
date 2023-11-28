@@ -43,7 +43,8 @@ module.exports = {
         '~pages$',
         'virtual:generated-layouts',
         '~icons',
-
+        'virtual',
+        'unfonts.css',
         // Ignore vite's ?raw imports
         '.*\?raw',
       ],

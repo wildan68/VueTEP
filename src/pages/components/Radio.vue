@@ -1,16 +1,16 @@
 <template>
   <ContentCard>
     <template #title>
-      Button Component
+      Radio Component
     </template>
     <template #subtitle>
-      Default element plus button components
+      Default element plus radio components
     </template>
-
-    <Button />
+      
+    <Radio />
   </ContentCard>
 </template>
-
+      
 <script setup lang="ts">
-import Button from '@/views/demos/Button.vue';
+import Radio from '@/views/demos/Radio.vue';
 </script>

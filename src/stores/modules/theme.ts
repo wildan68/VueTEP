@@ -86,6 +86,9 @@ export const useThemeStore = defineStore('theme', {
           root.style.setProperty(`${this.variables.TOASTIFY_COLOR_LIGHT}`, `var(${this.variables.BACKGROUND_COLOR})`)
           root.style.setProperty(`${this.variables.TOASTIFY_TEXT_COLOR_LIGHT}`, '#000')
 
+          // custom bg color
+          root.style.setProperty(this.variables.BACKGROUND_COLOR, '#FFF')
+
           root.classList.remove('dark');
           this.isDark = false;
         } else {
@@ -93,6 +96,9 @@ export const useThemeStore = defineStore('theme', {
           //  ℹ️ Override toastify
           root.style.setProperty(`${this.variables.TOASTIFY_COLOR_LIGHT}`, `var(${this.variables.BACKGROUND_COLOR})`)
           root.style.setProperty(`${this.variables.TOASTIFY_TEXT_COLOR_LIGHT}`, '#FFF')
+
+          // custom bg color
+          root.style.setProperty(this.variables.BACKGROUND_COLOR, '#1b1c1c')
 
           root.classList.add('dark');
           this.isDark = true;
