@@ -92,7 +92,7 @@ export default defineConfig({
           // families can be either strings (only regular 400 will be loaded)
           'Montserrat',
         ],
-      }, 
+      },
     }),
   ],
   define: { 'process.env': {} },
