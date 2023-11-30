@@ -1,6 +1,8 @@
 * {
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: var(--el-text-color-placeholder) var(--el-text-color-placeholder);
 }
 
 a {
@@ -11,12 +13,33 @@ a {
   }
 }
 
-.content-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 18px;
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: var(--el-border-color);
 }
 
-.text-higlight {
-  background-color: var(--el-color-background);
+*::-webkit-scrollbar-track:hover {
+  background-color: var(--el-border-color);
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: var(--el-border-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--el-text-color-placeholder);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--el-text-color-placeholder);
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: var(--el-text-color-placeholder);
 }

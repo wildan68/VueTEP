@@ -5,7 +5,7 @@
         <h2 class="text-2xl font-bold text-primary">
           Welcome to VueTEP ✨
         </h2>
-        <span class="text-placeholder">
+        <span class="text-sm text-placeholder">
           Vue, Tailwind, Element Plus and Extend Component's combination for the best developing frontend experience
         </span>
       </ContentCard>

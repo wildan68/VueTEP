@@ -17,6 +17,10 @@ export const useSidebar = () => {
       icon: IconDashboard,
       action: () => router.push('/'),
     }, {
+      key: 'components-group',
+      label: 'Components',
+      isGroup: true,
+    }, {
       key: 'components',
       label: 'Components',
       icon: IconComponents,
@@ -88,6 +92,10 @@ export const useSidebar = () => {
         
         render(dialog, document.body)
       },
+    },  {
+      key: 'forms-group',
+      label: 'Forms & Tables',
+      isGroup: true,
     }, {
       key: 'forms',
       label: 'Forms',
