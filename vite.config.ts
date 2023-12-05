@@ -30,6 +30,7 @@ export default defineConfig({
           'TransitionScale',
           'TransitionSlide',
         ],
+        'vue3-apexcharts': [['default', 'ApexChart']],
       }],
       vueTemplate: true,
       resolvers: [ElementPlusResolver()],

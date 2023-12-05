@@ -7,7 +7,7 @@
     }"
   >
     <!-- Theme Color -->
-    <div class="flex gap-2 p-2 border rounded-md dark:border-zinc-500">
+    <div class="flex items-center gap-2">
       <!-- Select Color -->
       <ElSelect
         v-model="colorTheme"

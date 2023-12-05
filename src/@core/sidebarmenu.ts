@@ -3,6 +3,7 @@ import IconDashboard from '~icons/tabler/dashboard'
 import IconComponents from '~icons/tabler/components'
 import IconTimeline from '~icons/tabler/timeline'
 import IconToggleRight from '~icons/tabler/toggle-right'
+import IconAppWindow from '~icons/tabler/app-window'
 import router from "@/router"
 import { createVNode, render } from "vue"
 import { ElDialog } from "element-plus"
@@ -18,7 +19,7 @@ export const useSidebar = () => {
       action: () => router.push('/'),
     }, {
       key: 'components-group',
-      label: 'Components',
+      label: 'All Components',
       isGroup: true,
     }, {
       key: 'components',
@@ -77,22 +78,27 @@ export const useSidebar = () => {
       key: 'charts',
       label: 'Charts',
       icon: IconTimeline,
+      action: () => router.push('/charts'),
+    }, {
+      key: 'component-node',
+      label: 'Component Node',
+      icon: IconAppWindow,
       action: () => {
         const dialog = createVNode(ElDialog, {
-          title: "Charts",
+          title: 'Component Node',
           modelValue: true,
-          "onUpdate:modelValue": (val: boolean) => {
+          'onUpdate:modelValue': (val: boolean) => {
             if (!val) {
               render(null, document.body)
             }
           },
         }, {
-          default: () => "Coming Soon",
+          default: () => 'Component Node create using VNode with Element Plus Dialog',
         })
         
         render(dialog, document.body)
       },
-    },  {
+    }, {
       key: 'forms-group',
       label: 'Forms & Tables',
       isGroup: true,
