@@ -3,61 +3,79 @@
     title="Charts"
     subtitle="Charts using ApexCharts"
   >
-    <div class="flex flex-wrap flex-grow">
-      <ContentCard title="Bar Chart">
+    <div class="flex flex-wrap justify-center flex-grow gap-2">
+      <ContentCard
+        title="Bar Chart"
+        border
+      >
         <ApexChart
           ref="barChart"
-          width="500"
+          width="450"
           type="bar"
           :options="chartOptions"
           :series="series"
         />
       </ContentCard>
 
-      <ContentCard title="Line Chart">
+      <ContentCard
+        title="Line Chart"
+        border
+      >
         <ApexChart
           ref="lineChart"
-          width="500"
+          width="450"
           type="line"
           :options="chartOptions"
           :series="series"
         />
       </ContentCard>
 
-      <ContentCard title="Area Chart">
+      <ContentCard
+        title="Area Chart"
+        border
+      >
         <ApexChart
           ref="areaChart"
-          width="500"
+          width="450"
           type="area"
           :options="chartOptions"
           :series="series"
         />
       </ContentCard>
 
-      <ContentCard title="Donut Chart">
+      <ContentCard
+        title="Donut Chart"
+        border
+      >
         <ApexChart
           ref="donutChart"
-          width="500"
+          width="450"
           type="donut"
           :options="donutOptions"
           :series="donutSeries"
         />
       </ContentCard>
 
-      <ContentCard title="Pie Chart">
+      <ContentCard
+        title="Pie Chart"
+        border
+      >
         <ApexChart
           ref="pieChart"
-          width="500"
+          width="450"
           type="pie"
           :options="donutOptions"
           :series="donutSeries"
         />
       </ContentCard>
 
-      <ContentCard title="Radar Chart">
+      <ContentCard
+        title="Radar Chart"
+        border
+      >
         <ApexChart
           ref="radarChart"
-          width="500"
+          width="450"
           type="radar"
           :options="radarOptions"
           :series="radarSeries"

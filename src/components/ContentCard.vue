@@ -1,5 +1,10 @@
 <template>
-  <div class="flex flex-col p-6 rounded-lg bg-background">
+  <div
+    class="flex flex-col p-6 rounded-lg bg-background"
+    :class="[
+      { 'border dark:border-zinc-500' : border}
+    ]"
+  >
     <div class="flex flex-col gap-1">
       <!-- Title Slots -->
       <span
@@ -42,6 +47,7 @@
 interface Props {
   title?: string;
   subtitle?: string;
+  border?: boolean;
 }
 
 defineProps<Props>();

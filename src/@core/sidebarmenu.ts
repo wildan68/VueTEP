@@ -4,6 +4,7 @@ import IconComponents from '~icons/tabler/components'
 import IconTimeline from '~icons/tabler/timeline'
 import IconToggleRight from '~icons/tabler/toggle-right'
 import IconAppWindow from '~icons/tabler/app-window'
+import IconMap from '~icons/tabler/map'
 import router from "@/router"
 import { createVNode, render } from "vue"
 import { ElDialog } from "element-plus"
@@ -79,6 +80,10 @@ export const useSidebar = () => {
       label: 'Charts',
       icon: IconTimeline,
       action: () => router.push('/charts'),
+    }, {
+      key: 'maps',
+      label: 'Maps',
+      icon: IconMap,
     }, {
       key: 'component-node',
       label: 'Component Node',
