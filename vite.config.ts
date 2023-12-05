@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'url'
 
-import { defineConfig } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -87,6 +87,7 @@ export default defineConfig({
         ...routes,
       ],
     }),
+    splitVendorChunkPlugin(),
     Unfonts({
       google: {
         families: [
