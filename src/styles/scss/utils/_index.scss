@@ -43,3 +43,7 @@ a {
 *::-webkit-scrollbar-thumb:active {
   background-color: var(--el-text-color-placeholder);
 }
+
+.leaflet-control-attribution.leaflet-control {
+  display: none !important;
+}

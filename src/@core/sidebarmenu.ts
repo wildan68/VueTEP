@@ -84,6 +84,7 @@ export const useSidebar = () => {
       key: 'maps',
       label: 'Maps',
       icon: IconMap,
+      action: () => router.push('/maps'),
     }, {
       key: 'component-node',
       label: 'Component Node',

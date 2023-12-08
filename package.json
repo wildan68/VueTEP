@@ -15,11 +15,13 @@
   "dependencies": {
     "@element-plus/theme-chalk": "^2.2.16",
     "@morev/vue-transitions": "^2.3.6",
+    "@vue-leaflet/vue-leaflet": "^0.10.1",
     "@tabler/icons": "^1.97.0",
     "@vueuse/core": "^9.5.0",
     "@vueuse/math": "^9.5.0",
     "apexcharts": "^3.44.1",
     "element-plus": "^2.4.1",
+    "leaflet": "^1.9.4",
     "node-sass": "^9.0.0",
     "pinia": "^2.1.7",
     "sass": "^1.60.0",
