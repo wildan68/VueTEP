@@ -120,6 +120,7 @@ export const useSidebar = () => {
         }, {
           key: 'validation',
           label: 'Validation',
+          action: () => router.push('/forms/validation'),
         },
       ],
     },

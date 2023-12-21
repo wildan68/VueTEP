@@ -51,7 +51,7 @@
 import type { ToastPosition } from 'vue3-toastify/index';
 
 const onToast = (position: ToastPosition) => {
-  toast("Hello world", {
+  toast('Hello world', {
     position,
   })
 }

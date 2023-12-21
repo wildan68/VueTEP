@@ -2,7 +2,8 @@
   <div
     class="flex flex-col p-6 rounded-lg bg-background"
     :class="[
-      { 'border dark:border-zinc-500' : border}
+      { 'border dark:border-zinc-500' : border },
+      { 'w-100 flex-1' : full }
     ]"
   >
     <div class="flex flex-col gap-1">
@@ -48,6 +49,7 @@ interface Props {
   title?: string;
   subtitle?: string;
   border?: boolean;
+  full?: boolean;
 }
 
 defineProps<Props>();

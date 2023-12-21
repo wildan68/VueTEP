@@ -6,6 +6,9 @@ import Toastify from '@/plugins/toastify'
 import MoreV from '@/plugins/morev'
 import ApexCharts from '@/plugins/apexcharts'
 import Leaflet from '@/plugins/leaflet'
+import VeeValidate from '@/plugins/vee-validate'
+import PasswordMeter from './plugins/password-meter'
+import HighlightJs from './plugins/highlightjs'
 
 import App from './App.vue'
 import router from './router'
@@ -30,5 +33,11 @@ app.use(MoreV)
 app.use(ApexCharts)
 
 app.use(Leaflet)
+
+app.use(VeeValidate)
+
+app.use(PasswordMeter)
+
+app.use(HighlightJs)
 
 app.mount('#app')

@@ -1,6 +1,6 @@
-# Vue 3 Element Plus + Tailwind (Combination) ✨
+# VueTEP ✨
 
-Starter Template for Vue 3 with modified Element Plus UI and Tailwind.
+Simple and Powerfull Element Plus UI and Tailwind CSS with extend Components, Easy to use!.
 
 ## Recommended IDE Setup
 

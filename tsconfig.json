@@ -46,7 +46,7 @@
         "src/plugins/axios"
       ],
       "@validators": [
-        "src/@core/utils/validators"
+        "src/@core/validators"
       ],
       "@stores": [
         "src/stores/index.ts"

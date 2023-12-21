@@ -5,7 +5,6 @@
   >
     <LMap
       v-if="mapLoaded"
-      ref="maps"
       v-model:zoom="zoom"
       :center="markerLatLng"
       :style="{ height: '400px' }"
@@ -49,7 +48,6 @@
 </template>
 
 <script setup lang="ts">
-const maps = ref()
 const mapLoaded = ref<boolean>(false)
 const zoom = ref<number>(17)
 const markerLatLng = ref<number[]>([-6.175403, 106.824584])
