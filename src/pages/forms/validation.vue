@@ -152,18 +152,14 @@
             label="Template"
             name="template"
           >
-            <pre v-highlightjs>
-              <code class="border rounded-md bg-zinc-100 dark:bg-zinc-900 dark:border-zinc-500 vue">{{ templateCode }}</code>
-            </pre>
+            <CodeHighlight>{{ templateCode }}</CodeHighlight>
           </ElTabPane>
 
           <ElTabPane
             label="Script"
             name="script"
           >
-            <pre v-highlightjs>
-              <code class="border rounded-md bg-zinc-100 dark:bg-zinc-900 dark:border-zinc-500 javascript">{{ scriptCode }}</code>
-            </pre>
+            <CodeHighlight>{{ scriptCode }}</CodeHighlight>
           </ElTabPane>
         </ElTabs>
       </ContentCard>
@@ -189,8 +185,8 @@ const onSubmit = () => {
   })
 }
 
-const templateCode = `
-<Form
+const templateCode = 
+`<Form
   class="flex flex-col gap-4 mt-6"
   @submit="onSubmit"
 >
@@ -317,7 +313,8 @@ const templateCode = `
   </ElButton>
 </Form>`
 
-const scriptCode = `
+const scriptCode = 
+`<script setup lang="ts">
 const formField = reactive({
   username: '',
   email: '',
@@ -332,5 +329,6 @@ const onSubmit = () => {
     type: 'success',
   })
 }
+&lt;/script&gt;
 `
 </script>

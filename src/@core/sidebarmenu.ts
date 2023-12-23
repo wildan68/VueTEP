@@ -5,12 +5,14 @@ import IconTimeline from '~icons/tabler/timeline'
 import IconToggleRight from '~icons/tabler/toggle-right'
 import IconAppWindow from '~icons/tabler/app-window'
 import IconMap from '~icons/tabler/map'
+import IconTable from '~icons/tabler/table'
 import router from "@/router"
 import { createVNode, render } from "vue"
 import { ElDialog } from "element-plus"
 
 export const useSidebar = () => {
   const route = useRoute()
+  const sidebarWidth = ref<number>(262)
 
   const sidebarMenu = reactive<ISidebar[]>([
     {
@@ -86,12 +88,12 @@ export const useSidebar = () => {
       icon: IconMap,
       action: () => router.push('/maps'),
     }, {
-      key: 'component-node',
-      label: 'Component Node',
+      key: 'vnode',
+      label: 'Virtual Node',
       icon: IconAppWindow,
       action: () => {
         const dialog = createVNode(ElDialog, {
-          title: 'Component Node',
+          title: 'Virtual Node',
           modelValue: true,
           'onUpdate:modelValue': (val: boolean) => {
             if (!val) {
@@ -99,7 +101,7 @@ export const useSidebar = () => {
             }
           },
         }, {
-          default: () => 'Component Node create using VNode with Element Plus Dialog',
+          default: () => 'Virtual Node create using VNode with Element Plus Dialog',
         })
         
         render(dialog, document.body)
@@ -123,6 +125,11 @@ export const useSidebar = () => {
           action: () => router.push('/forms/validation'),
         },
       ],
+    }, {
+      key: 'table',
+      label: 'Data Table',
+      icon: IconTable,
+      action: () => router.push('/table'),
     },
   ])
 
@@ -157,5 +164,6 @@ export const useSidebar = () => {
   return {
     sidebarMenu,
     openChildren,
+    sidebarWidth,
   }
 }

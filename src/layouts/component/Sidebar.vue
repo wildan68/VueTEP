@@ -2,7 +2,7 @@
   <aside
     id="layout-sidebar" 
     class="fixed top-0 bottom-0 left-0 z-50 p-6 shadow-lg bg-background"
-    :style="{ width: SIDEBAR_WIDTH + 'px' }"
+    :style="{ width: sidebarWidth + 'px' }"
   >
     <div class="flex flex-col gap-6">
       <span class="w-full text-lg font-extrabold text-center text-primary">VueTEP</span>
@@ -87,12 +87,10 @@
 </template>
 
 <script setup lang="ts">
-import SIZE from '@/constants/SIZE'
 import { useSidebar } from '@core/sidebarmenu'
 import type { ISidebar } from '@/types/sidebar';
 
-const { SIDEBAR_WIDTH } = SIZE
-const { sidebarMenu, openChildren } = useSidebar()
+const { sidebarMenu, openChildren, sidebarWidth } = useSidebar()
 
 const route = useRoute()
 

@@ -2,7 +2,7 @@
   <div
     class="sticky z-50 flex items-center justify-end gap-2 px-6 py-3 rounded-lg shadow-lg top-3 bg-background"
     :style="{
-      marginLeft: (SIDEBAR_WIDTH + 24) + 'px',
+      marginLeft: (sidebarWidth + 24) + 'px',
       marginRight: '24px',
     }"
   >
@@ -116,15 +116,15 @@
 </template>
 
 <script setup lang="ts">
-import SIZE from '@/constants/SIZE'
 import { useThemeStore } from '@stores'
 import { Actions } from '@/enum/stores';
 import type { FunctionalComponent, SVGAttributes } from 'vue'
+import { useSidebar } from '@core/sidebarmenu';
 
 const themeStore = useThemeStore();
 const colorTheme = ref<string>(themeStore.themeColor);
 
-const { SIDEBAR_WIDTH } = SIZE
+const { sidebarWidth } = useSidebar()
 const isDark = ref<boolean>(themeStore.isDark);
 const profilePopup = ref<boolean>(false);
 const profilePopupRef = ref<HTMLElement | null>(null);

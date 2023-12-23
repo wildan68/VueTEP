@@ -89,31 +89,8 @@ export default defineConfig({
     }),
     Pages({
       dirs: ['./src/pages'],
-
       // ℹ️ We need three routes using single routes so we will ignore generating route for this SFC file
       onRoutesGenerated: routes => [
-        // Email filter
-        // {
-        //   path: '/apps/email/:filter',
-        //   name: 'apps-email-filter',
-        //   component: '/src/pages/apps/email/index.vue',
-        //   meta: {
-        //     navActiveLink: 'apps-email',
-        //     layoutWrapperClasses: 'layout-content-height-fixed',
-        //   },
-        // },
-
-        // // Email label
-        // {
-        //   path: '/apps/email/label/:label',
-        //   name: 'apps-email-label',
-        //   component: '/src/pages/apps/email/index.vue',
-        //   meta: {
-        //     // contentClass: 'email-application',
-        //     navActiveLink: 'apps-email',
-        //     layoutWrapperClasses: 'layout-content-height-fixed',
-        //   },
-        // },
         ...routes,
       ],
     }),
@@ -131,7 +108,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      // '@themeConfig': fileURLToPath(new URL('./themeConfig.ts', import.meta.url)),
       '@core': fileURLToPath(new URL('./src/@core', import.meta.url)),
       '@layouts': fileURLToPath(new URL('./src/layouts', import.meta.url)),
       '@images': fileURLToPath(new URL('./src/assets/images/', import.meta.url)),
@@ -139,6 +115,7 @@ export default defineConfig({
       // '@axios': fileURLToPath(new URL('./src/plugins/axios', import.meta.url)),
       '@validators': fileURLToPath(new URL('./src/@core/utils/validators', import.meta.url)),
       '@stores': fileURLToPath(new URL('./src/stores/index.ts', import.meta.url)),
+      '@composables': fileURLToPath(new URL('./src/composables', import.meta.url)),
     },
   },
   build: {

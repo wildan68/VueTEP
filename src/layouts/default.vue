@@ -4,7 +4,7 @@
     <Header />
     <div
       :style="{
-        marginLeft: SIDEBAR_WIDTH + 'px',
+        marginLeft: sidebarWidth + 'px',
         minHeight: height - 120 + 'px',
       }"
       class="p-6 mt-3"
@@ -20,7 +20,7 @@
     </div>
     <Footer
       :style="{
-        marginLeft: SIDEBAR_WIDTH + 'px' 
+        marginLeft: sidebarWidth + 'px' 
       }"
     />
   </div>
@@ -30,9 +30,9 @@
 import Sidebar from '@layouts/component/Sidebar.vue' 
 import Header from '@layouts/component/Header.vue'
 import Footer from '@layouts/component/Footer.vue';
-import SIZE from '@/constants/SIZE'
+import { useSidebar } from '@core/sidebarmenu';
 
-const { SIDEBAR_WIDTH } = SIZE
+const { sidebarWidth } = useSidebar()
 
 const { height } = useWindowSize()
 

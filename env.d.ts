@@ -4,6 +4,7 @@
 /// <reference types="vite-plugin-pages/client" />
 /// <reference types="unplugin-icons/types/vue" />
 /// <reference types="global.d.ts" />
+/// <reference types="dayjs" />
 
 import 'vue-router'
 

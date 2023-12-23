@@ -28,7 +28,7 @@ module.exports = {
         'dark': withOpacity(CSSVariables.DARK_COLOR),
         'light': withOpacity(CSSVariables.LIGHT_COLOR),
         'background': `var(${CSSVariables.BACKGROUND_COLOR})`,
-        'page-background': `var(${CSSVariables.BACKGROUND_PAGE_COLOR})`,
+        'page-background': `var(${CSSVariables.BACKGROUND_COLOR_PAGE})`,
         'secondary': `var(${CSSVariables.SECONDARY_COLOR})`,
         'placeholder': `var(${CSSVariables.PLACEHOLDER_COLOR})`,
         'disabled': `var(${CSSVariables.DISABLED_COLOR})`,

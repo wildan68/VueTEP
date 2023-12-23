@@ -88,6 +88,7 @@ export const useThemeStore = defineStore('theme', {
 
           // custom bg color
           root.style.setProperty(this.variables.BACKGROUND_COLOR, '#FFF')
+          root.style.setProperty(this.variables.BACKGROUND_COLOR_PAGE, '#f2f3f5')
 
           root.classList.remove('dark');
           this.isDark = false;
@@ -99,6 +100,7 @@ export const useThemeStore = defineStore('theme', {
 
           // custom bg color
           root.style.setProperty(this.variables.BACKGROUND_COLOR, '#1b1c1c')
+          root.style.setProperty(this.variables.BACKGROUND_COLOR_PAGE, '#212121')
 
           root.classList.add('dark');
           this.isDark = true;

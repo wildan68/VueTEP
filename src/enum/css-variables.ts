@@ -8,7 +8,7 @@ enum CSSVariables {
   DARK_COLOR = '--el-color-dark',
   LIGHT_COLOR = '--el-color-light',
   BACKGROUND_COLOR = '--el-bg-color',
-  BACKGROUND_PAGE_COLOR = '--el-bg-color-page',
+  BACKGROUND_COLOR_PAGE = '--el-bg-color-page',
   SECONDARY_COLOR = '--el-text-color-secondary',
   PLACEHOLDER_COLOR = '--el-text-color-placeholder',
   DISABLED_COLOR = '--el-text-color-disabled',
