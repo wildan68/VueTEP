@@ -123,6 +123,10 @@ export const useSidebar = () => {
           key: 'validation',
           label: 'Validation',
           action: () => router.push('/forms/validation'),
+        }, {
+          key: 'stepper',
+          label: 'Stepper',
+          action: () => router.push('/forms/stepper'),
         },
       ],
     }, {

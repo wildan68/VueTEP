@@ -22,6 +22,7 @@
       "unplugin-icons/types/vue",
       "@morev/vue-transitions/types/volar",
       "unplugin-fonts/client",
+      "unplugin-vue-components/vite",
     ],
     "paths": {
       "@/*": [

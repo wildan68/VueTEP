@@ -1,5 +1,5 @@
 <template>
-  <div
+  <header
     class="sticky z-50 flex items-center justify-end gap-2 px-6 py-3 rounded-lg shadow-lg top-3 bg-background"
     :style="{
       marginLeft: (sidebarWidth + 24) + 'px',
@@ -112,7 +112,7 @@
         </div>
       </TransitionSlide>
     </div>
-  </div>
+  </header>
 </template>
 
 <script setup lang="ts">

@@ -64,11 +64,11 @@ export default defineConfig({
       }],
       vueTemplate: true,
       resolvers: [ElementPlusResolver()],
-
     }),
     Components({
-      dirs: ['src/components', 'src/views/demos'],
+      dirs: ['./src/components'],
       dts: true,
+      deep: true,
       resolvers: [
         ElementPlusResolver(), 
         IconsResolver({
@@ -76,7 +76,10 @@ export default defineConfig({
         }),
       ],
     }),
-    DefineOptions(),
+    DefineOptions({
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      exclude: [/node_modules/],
+    }),
     ElementPlus({
       useSource: true,
     }),

@@ -1,9 +1,10 @@
 <template>
   <div
-    class="flex flex-col p-6 rounded-lg bg-background"
+    class="flex flex-col p-6 rounded-lg"
     :class="[
       { 'border dark:border-zinc-500' : border },
-      { 'w-100 flex-1' : full }
+      { 'w-100 flex-1' : full },
+      { 'bg-background' : !transparent }
     ]"
   >
     <div class="flex flex-col gap-1">
@@ -50,7 +51,12 @@ interface Props {
   subtitle?: string;
   border?: boolean;
   full?: boolean;
+  transparent?: boolean;
 }
 
-defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+  title: '',
+  subtitle: '',
+  transparent: false,
+});
 </script>

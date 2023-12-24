@@ -8,7 +8,7 @@
       <span class="w-full text-lg font-extrabold text-center text-primary">VueTEP</span>
 
       <!-- Menu -->
-      <div class="relative h-[calc(100vh-74px)] pr-3 overflow-y-auto">
+      <nav class="relative h-[calc(100vh-74px)] pr-3 overflow-y-auto">
         <ul class="flex flex-col gap-2">
           <li
             v-for="item in sidebarMenu"
@@ -81,7 +81,7 @@
             </template>
           </li>
         </ul>
-      </div>
+      </nav>
     </div>
   </aside>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center gap-1 py-6 mt-6 text-sm text-gray-500">
+  <footer class="flex items-center justify-center gap-1 py-6 mt-6 text-sm text-gray-500">
     Powered by 
     <span class="text-danger">♥️</span> 
     <a
@@ -9,7 +9,7 @@
     >
       Wildan Rizky
     </a>
-  </div>
+  </footer>
 </template>
 
 <script setup lang="ts">
