@@ -147,10 +147,38 @@
       >
         <div class="flex flex-col w-full gap-1">
           <label>Country<span class="text-danger">*</span></label>
-          <ElInput
+          <ElSelect
             v-bind="field"
             v-model="forms.country"
-          />
+            placeholder="Select Country"
+            filterable
+          >
+            <template #prefix>
+              <template v-if="forms.country">
+                <img
+                  :src="getCountryFlag(forms.country)"
+                  :alt="getCountryName(forms.country)"
+                  class="w-6 h-4 rounded-md"
+                >
+              </template>
+            </template>
+
+            <ElOption
+              v-for="country in countryList"
+              :key="country.cca2"
+              :label="country.name.common"
+              :value="country.cca2"
+            >
+              <div class="flex items-center gap-2">
+                <img
+                  :src="country.flags.svg"
+                  :alt="country.name.common"
+                  class="w-6 h-4 rounded-md"
+                >
+                <span>{{ country.name.common }}</span>
+              </div>
+            </ElOption>
+          </ElSelect>
         
           <TransitionSlide>
             <p
@@ -171,10 +199,19 @@
       >
         <div class="flex flex-col w-full gap-1">
           <label>State <span class="text-danger">*</span></label>
-          <ElInput
+          <ElSelect
             v-bind="field"
             v-model="forms.state"
-          />
+            placeholder="Select State"
+            filterable
+          >
+            <ElOption
+              v-for="state in stateList"
+              :key="state.isoCode"
+              :label="state.name"
+              :value="state.isoCode"
+            />
+          </ElSelect>
         
           <TransitionSlide>
             <p
@@ -198,10 +235,19 @@
       >
         <div class="flex flex-col w-full gap-1">
           <label>City<span class="text-danger">*</span></label>
-          <ElInput
+          <ElSelect
             v-bind="field"
             v-model="forms.city"
-          />
+            placeholder="Select City"
+            filterable
+          >
+            <ElOption
+              v-for="city in cityList"
+              :key="city.name"
+              :label="city.name"
+              :value="city.name"
+            />
+          </ElSelect>
         
           <TransitionSlide>
             <p
@@ -243,7 +289,7 @@
     <div class="flex flex-col w-full gap-2">
       <label>Maps Pin Point</label>
       <LMap
-        v-if="mapLoaded"
+        ref="lmap"
         v-model:zoom="zoom"
         :center="forms.latLang"
         :style="{ height: '300px' }"
@@ -260,6 +306,7 @@
         />
 
         <LMarker
+          ref="lmarker"
           :lat-lng="forms.latLang"
           draggable
           @update:lat-lng="updateLatLng"
@@ -268,9 +315,11 @@
         <LControlZoom position="bottomright" />
 
         <LControl position="topleft">
-          <div class="p-2 rounded-md bg-background">
+          <!--
+            <div class="p-2 rounded-md bg-background">
             Lat: {{ forms.latLang[0] }}, Lang: {{ forms.latLang[1] }}
-          </div>
+            </div> 
+          -->
         </LControl>
       </LMap>
     </div>
@@ -294,12 +343,17 @@
 <script setup lang="ts">
 import { useStepperStore } from '@stores';
 import { Actions, Getters } from '@/enum/stores';
+import { State, City }  from 'country-state-city';
 
 const store = useStepperStore()
 const forms = store[Getters.GET_FORMS]
 
-const mapLoaded = ref<boolean>(false)
-const zoom = ref<number>(17)
+const zoom = ref<number>(14)
+const countryList = ref()
+const stateList = computed(() => State.getStatesOfCountry(forms.country))
+const cityList = computed(() => City.getCitiesOfState(forms.country, forms.state))
+const lmap = ref()
+const lmarker = ref()
 
 const updateLatLng = (latLng: { lat: number; lng: number }) => {
   forms.latLang[0] = latLng.lat
@@ -315,9 +369,62 @@ const onSubmit = () => {
   })
 }
 
+const getCoutryList = async () => {
+  const data = await store[Actions.GET_COUNTRY_LIST]({
+    fields: 'name,flags,cca2',
+  })
+
+  countryList.value = data
+}
+
+const getCountryFlag = (cca: string) => {
+  const country = countryList.value.find((country: any) => country.cca2 === cca)
+
+  return country.flags.svg
+}
+
+const getCountryName = (cca: string) => {
+  const country = countryList.value.find((country: any) => country.cca2 === cca)
+
+  return country.name.common
+}
+
+watch(
+  () => forms.country, 
+  () => {
+    forms.state = ''
+    forms.city = ''
+  },
+)
+
+watch(
+  () => forms.state, 
+  () => {
+    forms.city = ''
+  },
+)
+
+watch(
+  () => forms.city,
+  () => {
+    const city = cityList.value.find((city: any) => city.name === forms.city)
+
+    if (city) {
+      const lat = city.latitude as unknown as number
+      const lng = city.longitude as unknown as number
+
+      updateLatLng({ lat, lng })
+
+      lmap.value.leafletObject.panTo([lat, lng], {
+        animate: true,
+        duration: 1,
+      })
+      lmarker.value.leafletObject.setLatLng([lat, lng])
+    }
+  },
+)
+
 onMounted(() => {
-  setTimeout(() => {
-    mapLoaded.value = true
-  }, 500)
+  getCoutryList()
 })
 </script>

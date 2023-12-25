@@ -35,7 +35,7 @@
             />
             {{ opt.label }}
           </div>
-        </eloption>
+        </ElOption>
       </ElSelect>
 
       <!-- Custom Color -->

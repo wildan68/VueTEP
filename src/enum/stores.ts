@@ -8,6 +8,7 @@ enum Actions {
 
   // STEPPER MODULE
   SET_ACTIVE_STEP = 'setActiveStep',
+  GET_COUNTRY_LIST = 'getCountryList',
 }
 
 enum Getters {

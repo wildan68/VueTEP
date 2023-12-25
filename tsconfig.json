@@ -44,7 +44,7 @@
         "src/styles/*"
       ],
       "@axios": [
-        "src/plugins/axios"
+        "src/plugins/axios.ts"
       ],
       "@validators": [
         "src/@core/validators"

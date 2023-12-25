@@ -7,7 +7,7 @@
     <div class="flex gap-6">
       <ContentCard class="w-[20%]">
         <ElSteps
-          :space="250"
+          :space="150"
           :active="activeSteps"
           direction="vertical"
         >
@@ -23,6 +23,7 @@
       <ContentCard
         full
         title="Checkout Form" 
+        class="relative"
       >
         <TransitionSlide>
           <KeepAlive>

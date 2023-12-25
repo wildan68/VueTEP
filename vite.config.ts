@@ -115,7 +115,7 @@ export default defineConfig({
       '@layouts': fileURLToPath(new URL('./src/layouts', import.meta.url)),
       '@images': fileURLToPath(new URL('./src/assets/images/', import.meta.url)),
       '@styles': fileURLToPath(new URL('./src/styles/', import.meta.url)),
-      // '@axios': fileURLToPath(new URL('./src/plugins/axios', import.meta.url)),
+      '@axios': fileURLToPath(new URL('./src/plugins/axios', import.meta.url)),
       '@validators': fileURLToPath(new URL('./src/@core/utils/validators', import.meta.url)),
       '@stores': fileURLToPath(new URL('./src/stores/index.ts', import.meta.url)),
       '@composables': fileURLToPath(new URL('./src/composables', import.meta.url)),
