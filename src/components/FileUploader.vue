@@ -2,8 +2,8 @@
   <!-- Default File Uploader Box -->
   <template v-if="type === 'default'">
     <div class="flex flex-col gap-2">
-      <div class="flex p-2 border-dashed rounded-md border-[3px] justify-between">
-        <div class="flex items-center gap-2 text-zinc-600">
+      <div class="flex p-2 border-dashed rounded-md border-[3px] justify-between dark:border-zinc-600">
+        <div class="flex items-center gap-2 text-zinc-600 dark:text-zinc-300">
           <IconTablerFile />
 
           <template v-if="filesData">
