@@ -2,11 +2,11 @@
   <ContentCard
     title="Form Validation"
     subtitle="Form validation using VeeValidate"
+    transparent
   >
     <div class="flex justify-center flex-grow gap-6">
       <ContentCard
         title="Example Form"
-        border
         full
         class="h-fit"
       >
@@ -140,13 +140,11 @@
 
       <ContentCard
         title="Code"
-        border
         full
       >
         <ElTabs
           v-model="activeTab"
           type="border-card"
-          class="mt-6"
         >
           <ElTabPane
             label="Template"

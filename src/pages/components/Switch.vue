@@ -1,13 +1,15 @@
 <template>
-  <ContentCard>
+  <ContentCard transparent>
     <template #title>
       Switch Component
     </template>
     <template #subtitle>
       Default element plus switch components
     </template>
-          
-    <Switch />
+        
+    <ContentCard>
+      <Switch />
+    </ContentCard>
   </ContentCard>
 </template>
           

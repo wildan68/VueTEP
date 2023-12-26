@@ -1,13 +1,15 @@
 <template>
-  <ContentCard>
+  <ContentCard transparent>
     <template #title>
       Checkbox Component
     </template>
     <template #subtitle>
       Default element plus checkbox components
     </template>
-        
-    <Checkbox />
+    
+    <ContentCard>
+      <Checkbox />
+    </ContentCard>
   </ContentCard>
 </template>
         

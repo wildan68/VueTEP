@@ -19,7 +19,7 @@
     "@vee-validate/i18n": "^4.12.3",
     "@vee-validate/rules": "^4.12.3",
     "@vue-leaflet/vue-leaflet": "^0.10.1",
-    "@vueuse/core": "^9.5.0",
+    "@vueuse/core": "^10.7.0",
     "@vueuse/math": "^9.5.0",
     "apexcharts": "^3.44.1",
     "axios": "^1.6.2",

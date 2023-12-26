@@ -1,13 +1,15 @@
 <template>
-  <ContentCard>
+  <ContentCard transparent>
     <template #title>
       Datepicker Component
     </template>
     <template #subtitle>
       Default element plus datepicker components
     </template>
-            
-    <Datepicker />
+    
+    <ContentCard>
+      <Datepicker />
+    </ContentCard>
   </ContentCard>
 </template>
             

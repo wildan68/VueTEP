@@ -51,7 +51,7 @@
       v-ripple
       type="primary"
       circle
-      plain
+      text
       @click="isDark = !isDark"
     >
       <IconTablerMoonFilled v-if="isDark" />

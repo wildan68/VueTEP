@@ -1,5 +1,5 @@
 <template>
-  <ContentCard>
+  <ContentCard transparent>
     <template #title>
       Toast Component
     </template>
@@ -7,7 +7,9 @@
       Default element plus toast components
     </template>
                 
-    <Toast />
+    <ContentCard>
+      <Toast />
+    </ContentCard>
   </ContentCard>
 </template>
                 

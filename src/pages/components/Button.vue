@@ -1,5 +1,5 @@
 <template>
-  <ContentCard>
+  <ContentCard transparent>
     <template #title>
       Button Component
     </template>
@@ -7,7 +7,9 @@
       Default element plus button components
     </template>
 
-    <Button />
+    <ContentCard>
+      <Button />
+    </ContentCard>
   </ContentCard>
 </template>
 

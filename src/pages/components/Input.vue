@@ -1,5 +1,5 @@
-<template>
-  <ContentCard>
+<template>  
+  <ContentCard transparent>
     <template #title>
       Input Component
     </template>
@@ -7,7 +7,9 @@
       Default element plus input components
     </template>
   
-    <Input />
+    <ContentCard>
+      <Input />
+    </ContentCard>
   </ContentCard>
 </template>
   

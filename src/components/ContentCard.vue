@@ -12,6 +12,7 @@
       <span
         v-if="$slots.title"
         class="text-xl font-bold text-primary"
+        :class="{ 'mb-6' : !$slots.subtitle }"
       >
         <slot name="title" />
       </span>
@@ -20,6 +21,7 @@
       <span
         v-else-if="title"
         class="text-xl font-bold text-primary"
+        :class="{ 'mb-6' : !subtitle }"
       >
         {{ title }}
       </span>

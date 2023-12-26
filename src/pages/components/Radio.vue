@@ -1,5 +1,5 @@
 <template>
-  <ContentCard>
+  <ContentCard transparent>
     <template #title>
       Radio Component
     </template>
@@ -7,7 +7,9 @@
       Default element plus radio components
     </template>
       
-    <Radio />
+    <ContentCard>
+      <Radio />
+    </ContentCard>
   </ContentCard>
 </template>
       

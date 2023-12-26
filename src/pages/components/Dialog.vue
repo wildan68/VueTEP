@@ -1,5 +1,5 @@
 <template>
-  <ContentCard>
+  <ContentCard transparent>
     <template #title>
       Dialog Component
     </template>
@@ -7,7 +7,9 @@
       Default element plus dialog components
     </template>
               
-    <Dialog />
+    <ContentCard>
+      <Dialog />
+    </ContentCard>
   </ContentCard>
 </template>
               

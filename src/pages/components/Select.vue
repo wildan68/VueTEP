@@ -1,5 +1,5 @@
 <template>
-  <ContentCard>
+  <ContentCard transparent>
     <template #title>
       Select Component
     </template>
@@ -7,7 +7,9 @@
       Default element plus select components
     </template>
     
-    <Select />
+    <ContentCard>
+      <Select />
+    </ContentCard>
   </ContentCard>
 </template>
     

@@ -2,11 +2,11 @@
   <ContentCard
     title="Charts"
     subtitle="Charts using ApexCharts"
+    transparent
   >
     <div class="flex flex-wrap justify-center flex-grow gap-2">
       <ContentCard
         title="Bar Chart"
-        border
       >
         <ApexChart
           ref="barChart"
@@ -19,7 +19,6 @@
 
       <ContentCard
         title="Line Chart"
-        border
       >
         <ApexChart
           ref="lineChart"
@@ -32,7 +31,6 @@
 
       <ContentCard
         title="Area Chart"
-        border
       >
         <ApexChart
           ref="areaChart"
@@ -45,7 +43,6 @@
 
       <ContentCard
         title="Donut Chart"
-        border
       >
         <ApexChart
           ref="donutChart"
@@ -58,7 +55,6 @@
 
       <ContentCard
         title="Pie Chart"
-        border
       >
         <ApexChart
           ref="pieChart"
@@ -71,7 +67,6 @@
 
       <ContentCard
         title="Radar Chart"
-        border
       >
         <ApexChart
           ref="radarChart"

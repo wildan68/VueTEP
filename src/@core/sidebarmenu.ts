@@ -6,13 +6,16 @@ import IconToggleRight from '~icons/tabler/toggle-right'
 import IconAppWindow from '~icons/tabler/app-window'
 import IconMap from '~icons/tabler/map'
 import IconTable from '~icons/tabler/table'
+import IconSpeakerphone from '~icons/tabler/speakerphone'
+import IconExternalLink from '~icons/tabler/external-link'
+import IconUpload from '~icons/tabler/upload'
 import router from "@/router"
 import { createVNode, render } from "vue"
 import { ElDialog } from "element-plus"
 
 export const useSidebar = () => {
   const route = useRoute()
-  const sidebarWidth = ref<number>(262)
+  const sidebarWidth = ref<number>(282)
 
   const sidebarMenu = reactive<ISidebar[]>([
     {
@@ -71,10 +74,10 @@ export const useSidebar = () => {
           icon: IconComponents,
           action: () => router.push('/components/switch'),
         }, {
-          key: 'toast',
-          label: 'Toast',
-          icon: IconComponents,
-          action: () => router.push('/components/toast'),
+          key: 'more',
+          label: 'Element Plus',
+          icon: IconExternalLink,
+          action: () => window.open('https://element-plus.org/en-US/component/button.html', '_blank'),
         },
       ],
     }, {
@@ -87,6 +90,16 @@ export const useSidebar = () => {
       label: 'Maps',
       icon: IconMap,
       action: () => router.push('/maps'),
+    }, {
+      key: 'toast',
+      label: 'Toast',
+      icon: IconSpeakerphone,
+      action: () => router.push('/toast'),
+    }, {
+      key: 'uploader',
+      label: 'File Uploader',
+      icon: IconUpload,
+      action: () => router.push('/uploader'),
     }, {
       key: 'vnode',
       label: 'Virtual Node',
@@ -101,7 +114,7 @@ export const useSidebar = () => {
             }
           },
         }, {
-          default: () => 'Virtual Node create using VNode with Element Plus Dialog',
+          default: () => 'Virtual Node create using with Element Plus Dialog',
         })
         
         render(dialog, document.body)

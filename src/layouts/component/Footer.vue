@@ -1,6 +1,6 @@
 <template>
   <footer class="flex items-center justify-center gap-1 py-6 mt-6 text-sm text-gray-500">
-    Powered by 
+    Made by 
     <span class="text-danger">♥️</span> 
     <a
       href="https://instagram.com/wldan.rzky_"

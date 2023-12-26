@@ -1,6 +1,6 @@
 <template>
   <Form
-    class="flex flex-col gap-4 mt-6"
+    class="flex flex-col gap-4"
     @submit="onSubmit"
   >
     <!-- First Name & Last Name -->
