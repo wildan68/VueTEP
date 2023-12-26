@@ -120,8 +120,6 @@ const checkFileTypes = (files: File) => {
 
   const fileTypes = files.name.split('.')
 
-  console.log('fileTypes', fileTypes[fileTypes.length - 1])
-
   return !props.accept.includes(fileTypes[fileTypes.length - 1])
 }
 
