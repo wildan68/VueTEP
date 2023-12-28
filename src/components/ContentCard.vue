@@ -48,15 +48,16 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
+interface IProps {
   title?: string;
   subtitle?: string;
   border?: boolean;
   full?: boolean;
   transparent?: boolean;
+  modelValue?: boolean;
 }
 
-withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<IProps>(), {
   title: '',
   subtitle: '',
   transparent: false,

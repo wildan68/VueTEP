@@ -4,7 +4,7 @@
     subtitle="Charts using ApexCharts"
     transparent
   >
-    <div class="flex flex-wrap justify-center flex-grow gap-2">
+    <div class="grid grid-flow-row grid-cols-2 gap-6">
       <ContentCard
         title="Bar Chart"
       >

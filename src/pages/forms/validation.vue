@@ -11,7 +11,7 @@
         class="h-fit"
       >
         <Form
-          class="flex flex-col gap-4 mt-6"
+          class="flex flex-col gap-4"
           @submit="onSubmit"
         >
           <Field
