@@ -9,6 +9,10 @@ enum Actions {
   // STEPPER MODULE
   SET_ACTIVE_STEP = 'setActiveStep',
   GET_COUNTRY_LIST = 'getCountryList',
+
+  // SIDEBAR MODULE
+  TOGGLE_SIDEBAR = 'toggleSidebar',
+  TOGGLE_SIDEBAR_HOVERED = 'toggleSidebarHovered',
 }
 
 enum Getters {
@@ -18,6 +22,11 @@ enum Getters {
   // STEPPER MODULE
   GET_ACTIVE_STEP = 'getActiveStep',
   GET_FORMS = 'getForms',
+
+  // SIDEBAR MODULE
+  GET_SIDEBAR_WIDTH = 'getSidebarWidth',
+  GET_COLLAPSED = 'getCollapsed',
+  GET_SIDEBAR_HOVERED = 'getSidebarHovered',
 }
 
 export { Actions, Getters }

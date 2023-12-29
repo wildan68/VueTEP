@@ -7,7 +7,7 @@
         marginLeft: sidebarWidth + 'px',
         minHeight: height - 120 + 'px',
       }"
-      class="p-6 mt-3"
+      class="p-6 mt-3 transition-all duration-300"
     >
       <RouterView v-slot="{ Component }">
         <TransitionExpand

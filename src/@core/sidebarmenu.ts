@@ -12,10 +12,15 @@ import IconUpload from '~icons/tabler/upload'
 import router from "@/router"
 import { createVNode, render } from "vue"
 import { ElDialog } from "element-plus"
+import { useSidebarStore } from "@/stores"
+import { Actions, Getters } from "@/enum/stores"
 
 export const useSidebar = () => {
   const route = useRoute()
-  const sidebarWidth = ref<number>(282)
+  const store = useSidebarStore()
+  const sidebarWidth = computed<number>(() => store[Getters.GET_SIDEBAR_WIDTH])
+  const sidebarCollapsed = computed<boolean>(() => store[Getters.GET_COLLAPSED])
+  const sidebarHovered = computed<boolean>(() => store[Getters.GET_SIDEBAR_HOVERED])
 
   const sidebarMenu = reactive<ISidebar[]>([
     {
@@ -162,6 +167,10 @@ export const useSidebar = () => {
     })
   }
 
+  const onToggleSidebar = () => store[Actions.TOGGLE_SIDEBAR]()
+
+  const onToggleSidebarHovered = () => store[Actions.TOGGLE_SIDEBAR_HOVERED]()
+
   onMounted(() => {
     const { path } = route
   
@@ -182,5 +191,9 @@ export const useSidebar = () => {
     sidebarMenu,
     openChildren,
     sidebarWidth,
+    sidebarCollapsed,
+    onToggleSidebar,
+    onToggleSidebarHovered,
+    sidebarHovered,
   }
 }
