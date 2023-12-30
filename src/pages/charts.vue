@@ -85,6 +85,7 @@ import type { ApexOptions } from 'apexcharts'
 import { useThemeStore } from '@/stores';
 
 const themeStore = useThemeStore();
+const isDark = computed(() => themeStore.isDark)
 
 const [
   barChart, 
@@ -100,20 +101,20 @@ const chartOptions = reactive<ApexOptions>({
     id: 'vuechart-example',
   },
   theme: {
-    mode: themeStore.isDark ? 'dark' : 'light',
+    mode: isDark.value ? 'dark' : 'light',
   },
   xaxis: {
     categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
     labels: {
       style: {
-        colors: themeStore.isDark ? '#fff' : '#4a4a49',
+        colors: isDark.value ? '#fff' : '#4a4a49',
       },
     },
   },
   yaxis: {
     labels: {
       style: {
-        colors: themeStore.isDark ? '#fff' : '#4a4a49',
+        colors: isDark.value ? '#fff' : '#4a4a49',
       },
     },
   },
@@ -138,13 +139,13 @@ const radarOptions = reactive<ApexOptions>({
     id: 'vuechart-example',
   },
   theme: {
-    mode: themeStore.isDark ? 'dark' : 'light',
+    mode: isDark.value ? 'dark' : 'light',
   },
   xaxis: {
     categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
     labels: {
       style: {
-        colors: themeStore.isDark ? '#fff' : '#4a4a49',
+        colors: isDark.value ? '#fff' : '#4a4a49',
       },
     },
   },
@@ -181,10 +182,10 @@ const donutOptions = reactive<ApexOptions>({
     enabled: false,
   },
   theme: {
-    mode: themeStore.isDark ? 'dark' : 'light',
+    mode: isDark.value ? 'dark' : 'light',
   },
   tooltip: {
-    theme: themeStore.isDark ? 'light' : 'dark',
+    theme: isDark.value ? 'light' : 'dark',
   },
   colors: ['#8442ff', '#f0932b', '#4b7bec', '#78e08f', '#eb2f06'],
   labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],

@@ -41,7 +41,7 @@
             <template v-else>
               <div
                 v-ripple
-                class="flex items-center px-6 py-3 transition-all duration-300 rounded-md cursor-pointer select-none hover:bg-gray-100"
+                class="flex items-center px-6 py-3 transition-all duration-300 rounded-md cursor-pointer select-none hover:bg-gray-100 dark:hover:bg-zinc-800"
                 :class="[
                   { 'bg-gray-100 text-gray-500 dark:bg-zinc-800' : item.childrenOpen },
                   { 'bg-gradient-to-r from-primary/80 to-primary text-white' : activeMenu === item.key },
