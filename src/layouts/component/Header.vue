@@ -1,6 +1,6 @@
 <template>
   <header
-    class="sticky z-50 flex items-center gap-2 p-3 transition-all duration-300 rounded-lg shadow-lg top-3 bg-background"
+    class="sticky z-20 flex items-center gap-2 p-3 transition-all duration-300 rounded-lg shadow-lg top-3 bg-background"
     :style="{
       marginLeft: (sidebarWidth + 24) + 'px',
       marginRight: '24px',
