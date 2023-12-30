@@ -87,7 +87,7 @@
                     class="flex items-center gap-2 px-6 py-3 text-sm transition-all duration-300 rounded-md cursor-pointer select-none hover:transform hover:translate-x-1"
                     :class="[
                       { 'text-gray-400 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-400' : activeMenu !== child.key },
-                      { 'text-primary' : activeMenu === child.key },
+                      { 'text-primary font-medium' : activeMenu === child.key },
                     ]"
                     @click="onAction(child)"
                   >

@@ -1,6 +1,7 @@
 import type { ISidebar } from "@/types/sidebar"
 import IconDashboard from '~icons/tabler/dashboard'
-import IconComponents from '~icons/tabler/components'
+import IconComponents from '~icons/tabler/stack-front'
+import IconPoint from '~icons/tabler/point'
 import IconTimeline from '~icons/tabler/timeline'
 import IconToggleRight from '~icons/tabler/toggle-right'
 import IconAppWindow from '~icons/tabler/app-window'
@@ -41,42 +42,42 @@ export const useSidebar = () => {
         {
           key: 'button',
           label: 'Button',
-          icon: IconComponents,
+          icon: IconPoint,
           action: () => router.push('/components/button'),
         }, {
           key: 'checkbox',
           label: 'Checkbox',
-          icon: IconComponents,
+          icon: IconPoint,
           action: () => router.push('/components/checkbox'),
         }, {
           key: 'datepicker',
           label: 'Date Picker',
-          icon: IconComponents,
+          icon: IconPoint,
           action: () => router.push('/components/datepicker'),
         }, {
           key: 'dialog',
           label: 'Dialog',
-          icon: IconComponents,
+          icon: IconPoint,
           action: () => router.push('/components/dialog'),
         }, {
           key: 'input',
           label: 'Input',
-          icon: IconComponents,
+          icon: IconPoint,
           action: () => router.push('/components/input'),
         },{
           key: 'radio',
           label: 'Radio',
-          icon: IconComponents,
+          icon: IconPoint,
           action: () => router.push('/components/radio'),
         }, {
           key: 'select',
           label: 'Select',
-          icon: IconComponents,
+          icon: IconPoint,
           action: () => router.push('/components/select'),
         }, {
           key: 'switch',
           label: 'Switch',
-          icon: IconComponents,
+          icon: IconPoint,
           action: () => router.push('/components/switch'),
         }, {
           key: 'more',
