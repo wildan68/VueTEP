@@ -3,8 +3,8 @@
     id="layout-sidebar" 
     class="fixed top-0 bottom-0 left-0 z-50 p-6 transition-all duration-300 shadow-lg bg-background"
     :style="{ width: scopedHovered ? '282px' : sidebarWidth + 'px' }"
-    @mouseenter="onSidebarHover"
-    @mouseleave="onSidebarHover"
+    @mouseleave.prevent="onSidebarHover"
+    @mouseenter.prevent="onSidebarHover"
   >
     <div class="flex flex-col gap-6">
       <span class="w-full text-lg font-extrabold text-center text-primary">VueTEP</span>
@@ -140,9 +140,7 @@ const onAction = (items: ISidebar) => {
 const onSidebarHover = () => {
   if (!sidebarCollapsed.value && !sidebarHovered.value) return
   
-  setTimeout(() => {
-    scopedHovered.value = !scopedHovered.value
-  }, 100)
+  scopedHovered.value = !scopedHovered.value
 }
 
 const activeMenu = computed(() => {
@@ -150,9 +148,4 @@ const activeMenu = computed(() => {
   
   return path.split('/').pop() || 'dashboard'
 })
-
-watch(
-  scopedHovered,
-  (val) => console.log('val', val),
-)
 </script>
