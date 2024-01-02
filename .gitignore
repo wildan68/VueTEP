@@ -34,3 +34,6 @@ src/@iconify/*.js
 components.d.ts
 auto-imports.d.ts
 .env
+
+# pwa
+dev-dist
