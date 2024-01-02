@@ -109,7 +109,11 @@ export default defineConfig({
     }),
     VitePWA({ 
       registerType: 'autoUpdate', 
+      base: "/",
+      srcDir: "src",
+      filename: "sw.ts",
       injectRegister: 'auto',
+      strategies: 'injectManifest',
       manifest: {
         name: 'VueTEP - Vuejs Element Plus and TailwindCSS UI',
         short_name: 'VueTEP',
