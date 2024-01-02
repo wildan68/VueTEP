@@ -108,18 +108,14 @@ export default defineConfig({
       },
     }),
     VitePWA({ 
-      mode: 'production',
       base: "/",
       srcDir: "src",
       filename: "sw.ts",
       injectRegister: 'script',
-      strategies: 'injectManifest',
+      strategies: 'generateSW',
       manifest: {
         name: 'VueTEP - Vuejs Element Plus and TailwindCSS UI',
         short_name: 'VueTEP',
-      },
-      workbox: {
-        cleanupOutdatedCaches: false,
       },
     }),
   ],
