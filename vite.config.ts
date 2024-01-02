@@ -108,7 +108,7 @@ export default defineConfig({
       },
     }),
     VitePWA({ 
-      registerType: 'autoUpdate', 
+      mode: 'development',
       base: "/",
       srcDir: "src",
       filename: "sw.ts",
