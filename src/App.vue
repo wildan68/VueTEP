@@ -41,5 +41,6 @@ const onClose = async () => {
   needRefresh.value = false;
 };
 
+
 onMounted(async() => console.log('token', await getToken))
 </script>
