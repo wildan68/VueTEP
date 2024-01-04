@@ -42,5 +42,5 @@ const onClose = async () => {
 };
 
 
-onMounted(async() => console.log('token', await getToken))
+onMounted(async() => console.log('token : ', await getToken))
 </script>
