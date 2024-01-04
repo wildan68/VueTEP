@@ -20,7 +20,7 @@ const firebaseConfig = {
   measurementId: "G-3PYS15C7LC",
 };
 
-// Firebase Cloud Messaging (FCM)
+// Firebase Cloud Messaging (FCM) Client
 const firebaseCloudMessaging = () => {
   const messaging = getMessaging();
 
