@@ -31,11 +31,15 @@
 
 <script setup lang="ts">
 import { useRegisterSW } from "virtual:pwa-register/vue";
+import { firebaseCloudMessaging } from '@fb'
 
 const { offlineReady, needRefresh, updateServiceWorker } = useRegisterSW();
+const { getToken } = firebaseCloudMessaging()
 
 const onClose = async () => {
   offlineReady.value = false;
   needRefresh.value = false;
 };
+
+onMounted(async() => console.log('token', await getToken))
 </script>

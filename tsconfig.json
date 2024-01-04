@@ -29,9 +29,6 @@
       "@/*": [
         "src/*"
       ],
-      "@themeConfig": [
-        "themeConfig.ts"
-      ],
       "@layouts/*": [
         "src/layouts/*"
       ],
@@ -55,6 +52,9 @@
       ],
       "@composables/*": [
         "src/composables/*"
+      ],
+      "@fb": [
+        "src/plugins/firebase.ts"
       ],
     },
     "lib": [

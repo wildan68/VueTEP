@@ -26,6 +26,7 @@
     "country-state-city": "^3.2.1",
     "dayjs": "^1.11.10",
     "element-plus": "^2.4.1",
+    "firebase": "^10.7.1",
     "leaflet": "^1.9.4",
     "node-sass": "^9.0.0",
     "pinia": "^2.1.7",

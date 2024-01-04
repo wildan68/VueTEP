@@ -10,6 +10,7 @@ import IconTable from '~icons/tabler/table'
 import IconSpeakerphone from '~icons/tabler/speakerphone'
 import IconExternalLink from '~icons/tabler/external-link'
 import IconUpload from '~icons/tabler/upload'
+import IconFirebase from '~icons/tabler/brand-firebase'
 import router from "@/router"
 import { createVNode, render } from "vue"
 import { ElDialog } from "element-plus"
@@ -153,6 +154,16 @@ export const useSidebar = () => {
       label: 'Data Table',
       icon: IconTable,
       action: () => router.push('/table'),
+    },
+    {
+      key: 'data',
+      label: 'Data',
+      isGroup: true,
+    }, {
+      key: 'firebase',
+      label: 'Firebase',
+      icon: IconFirebase,
+      action: () => router.push('/firebase'),
     },
   ])
 
