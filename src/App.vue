@@ -1,24 +1,26 @@
 <template>
   <template v-if="offlineReady || needRefresh">
-    <div class="mt-1">
-      <span v-if="offlineReady"> App ready to work offline </span>
-      <span v-else>New content available, click on reload button to update.</span>
-    </div>
+    <div class="h-[100vh] bg-background flex flex-col gap-2 justify-center items-center">
+      <div class="mt-1">
+        <span v-if="offlineReady"> App ready to work offline </span>
+        <span v-else>New content available, click on reload button to update.</span>
+      </div>
 
-    <div class="flex items-center justify-center gap-2">
-      <ElButton
-        type="primary"
-        @click="() => updateServiceWorker()"
-      >
-        Reload
-      </ElButton>
+      <div class="flex items-center justify-center gap-2">
+        <ElButton
+          type="primary"
+          @click="() => updateServiceWorker()"
+        >
+          Reload
+        </ElButton>
 
-      <ElButton
-        type="primary"
-        @click="onClose"
-      >
-        Close
-      </ElButton>
+        <ElButton
+          type="primary"
+          @click="onClose"
+        >
+          Close
+        </ElButton>
+      </div>
     </div>
   </template>
 

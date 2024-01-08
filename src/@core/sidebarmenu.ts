@@ -11,6 +11,8 @@ import IconSpeakerphone from '~icons/tabler/speakerphone'
 import IconExternalLink from '~icons/tabler/external-link'
 import IconUpload from '~icons/tabler/upload'
 import IconFirebase from '~icons/tabler/brand-firebase'
+import IconSettings from '~icons/tabler/settings'
+import IconSlideshow from '~icons/tabler/slideshow'
 import router from "@/router"
 import { createVNode, render } from "vue"
 import { ElDialog } from "element-plus"
@@ -30,6 +32,11 @@ export const useSidebar = () => {
       label: 'Dashboard',
       icon: IconDashboard,
       action: () => router.push('/'),
+    }, {
+      key: 'installation',
+      label: 'Installation',
+      icon: IconSettings,
+      action: () => router.push('/installation'),
     }, {
       key: 'components-group',
       label: 'All Components',
@@ -107,6 +114,11 @@ export const useSidebar = () => {
       label: 'File Uploader',
       icon: IconUpload,
       action: () => router.push('/uploader'),
+    }, {
+      key: 'carousel',
+      label: 'Carousel',
+      icon: IconSlideshow,
+      action: () => router.push('/carousel'),
     }, {
       key: 'vnode',
       label: 'Virtual Node',

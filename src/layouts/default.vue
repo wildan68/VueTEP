@@ -11,7 +11,6 @@
     >
       <RouterView v-slot="{ Component }">
         <TransitionExpand
-          appear
           @before-enter="loadPage"
         >
           <Component :is="Component" />

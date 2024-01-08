@@ -7,8 +7,9 @@ import MoreV from '@/plugins/morev'
 import ApexCharts from '@/plugins/apexcharts'
 import Leaflet from '@/plugins/leaflet'
 import VeeValidate from '@/plugins/vee-validate'
-import PasswordMeter from './plugins/password-meter'
-import HighlightJs from './plugins/highlightjs'
+import PasswordMeter from '@/plugins/password-meter'
+import HighlightJs from '@/plugins/highlightjs'
+import Swiper from '@/plugins/swiper'
 
 import App from './App.vue'
 import router from './router'
@@ -39,5 +40,7 @@ app.use(VeeValidate)
 app.use(PasswordMeter)
 
 app.use(HighlightJs)
+
+app.use(Swiper)
 
 app.mount('#app')
