@@ -11,8 +11,9 @@
 
       <!-- Menu -->
       <nav
-        class="relative h-[calc(100vh-74px)] overflow-y-auto"
-        :class="[{ 'pr-3' : !sidebarCollapsed || scopedHovered }]"
+        ref="navRef"
+        class="relative h-[calc(100vh-74px)] overflow-y-auto transition-all duration-300"
+        :class="[{ 'pr-3' : !sidebarCollapsed || scopedHovered }, navScrolling]"
       >
         <ul class="flex flex-col gap-2">
           <!-- Menu Items -->
@@ -122,6 +123,19 @@ const {
 
 const route = useRoute()
 const scopedHovered = ref<boolean>(false)
+const navRef = ref<HTMLElement | null>(null)
+
+const { isScrolling } = useScroll(navRef, { behavior: 'smooth' })
+
+const activeMenu = computed(() => {
+  const { path } = route
+  
+  return path.split('/').pop() || 'dashboard'
+})
+
+const navScrolling = computed(() => {
+  return !isScrolling.value ? 'hide-scrollbar' : ''
+})
 
 const onAction = (items: ISidebar) => {
   if (items.isGroup) return
@@ -142,10 +156,14 @@ const onSidebarHover = () => {
   
   scopedHovered.value = !scopedHovered.value
 }
-
-const activeMenu = computed(() => {
-  const { path } = route
-  
-  return path.split('/').pop() || 'dashboard'
-})
 </script>
+
+<style scoped lang="scss"> 
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+</style>

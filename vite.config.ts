@@ -70,6 +70,7 @@ export default defineConfig({
           ['Pagination', 'SwiperPagination'],
           ['Scrollbar', 'SwiperScrollbar'],
         ],
+        'vue-froala-wysiwyg': [['default', 'Froala']],
       }],
       vueTemplate: true,
       resolvers: [ElementPlusResolver()],

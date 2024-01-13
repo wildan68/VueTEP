@@ -13,6 +13,7 @@ import IconUpload from '~icons/tabler/upload'
 import IconFirebase from '~icons/tabler/brand-firebase'
 import IconSettings from '~icons/tabler/settings'
 import IconSlideshow from '~icons/tabler/slideshow'
+import IconEdit from '~icons/tabler/edit'
 import router from "@/router"
 import { createVNode, render } from "vue"
 import { ElDialog } from "element-plus"
@@ -119,6 +120,11 @@ export const useSidebar = () => {
       label: 'Carousel',
       icon: IconSlideshow,
       action: () => router.push('/carousel'),
+    }, {
+      key: 'texteditor',
+      label: 'Text Editor',
+      icon: IconEdit,
+      action: () => router.push('/texteditor'),
     }, {
       key: 'vnode',
       label: 'Virtual Node',

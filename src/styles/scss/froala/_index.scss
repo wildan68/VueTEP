@@ -1,0 +1,119 @@
+.fr-box {
+  a.fr-floating-btn {
+    width: auto !important;
+    height: auto !important;
+    padding: 2px !important;
+  }
+
+  .fr-qi-helper a.fr-btn.fr-floating-btn {
+    width: 48px !important;
+    height: 48px !important;
+    padding: 12px !important;
+  }
+}
+
+.fr-command.fr-btn.fr-active {
+  color: var(--el-color-primary) !important;
+}
+
+// Dark mode
+html[class="dark"] {
+  .fr-toolbar {
+    background: #252525 !important;
+    border: 1px solid #444444 !important;
+    
+    .fr-command.fr-btn {
+      color: #fff !important;
+      
+      svg {
+        path {
+          fill: currentColor !important;
+        }
+      }
+    }
+
+    .fr-command.fr-btn.fr-active {
+      color: var(--el-color-primary) !important;
+    }
+
+    .fr-newline {
+      background: #252525 !important;
+    }
+
+    .fr-more-toolbar {
+      background: #3b3b3b !important;
+    }
+
+    .fr-command.fr-btn.fr-open:not(:hover):not(:focus):not(:active) {
+      background: #3b3b3b !important;
+    }
+
+    .fr-command.fr-btn:hover {
+      background: #3b3b3b !important;
+    }
+
+    .fr-tabs .fr-command.fr-btn:not(:hover):not(:focus).fr-active {
+      background: #3b3b3b !important;
+    }
+  }
+  
+  .fr-box.fr-basic {
+    .fr-wrapper {
+      background: #252525 !important;
+      border: 1px solid #444444 !important;
+    }
+
+    .fr-element {
+      color: #fff !important;
+    }
+  }
+
+  .fr-second-toolbar {
+    background: #252525 !important;
+    border: 1px solid #444444 !important;
+  }
+
+  textarea.fr-code {
+    background: #252525 !important;
+    color: #fff !important;
+  }
+
+  .fr-markdown-editor {
+    background: #414141 !important;
+    color: #fff !important;
+  }
+
+  .fr-popup {
+    background: #252525 !important;
+
+    .fr-buttons.fr-tabs {
+      background: #151515 !important;
+      color: #fff !important;
+    }
+
+    .fr-input-line {
+      input[type="text"], textarea {
+        background: #252525 !important;
+        border: 1px solid var(--el-color-primary) !important;
+        color: #fff !important;
+      }
+
+      input+label, textarea+label {
+        background: #252525 !important;
+        color: #444444 !important;
+      }
+    }
+
+    .fr-checkbox-line label {
+      color: #fff !important;
+    }
+
+    .fr-files-upload-layer .fr-form:hover {
+      background: #3b3b3b !important;
+    }
+  }
+
+  .fr-toolbar .fr-command.fr-btn.fr-btn-active-popup {
+    background: #3b3b3b !important;
+  }
+}
