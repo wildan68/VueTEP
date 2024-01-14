@@ -22,4 +22,17 @@
 
 <script setup lang="ts">
 const textModel = ref<string>('');
+
+// Handling Unlicensed Froala Editor
+watch(
+  textModel,
+  (val) => {
+    if (val.includes('<p data-f-id="pbf"')) {
+      // split the string
+      const split = val.split('<p data-f-id="pbf"');
+      // get the first index
+      textModel.value = split[0];
+    }
+  },
+)
 </script>
