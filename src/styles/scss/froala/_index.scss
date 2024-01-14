@@ -16,6 +16,14 @@
   color: var(--el-color-primary) !important;
 }
 
+.fr-wrapper {
+  div {
+    a {
+      display: none !important;
+    }
+  }
+}
+
 // Dark mode
 html[class="dark"] {
   .fr-toolbar {
