@@ -8,7 +8,7 @@
       <ContentCard
         title="Default Editor"
       >
-        <Froala v-model:value="textModel" />
+        <TextEditor v-model="textModel" />
       </ContentCard>
 
       <ContentCard
@@ -21,18 +21,7 @@
 </template>
 
 <script setup lang="ts">
-const textModel = ref<string>('');
+import TextEditor from '@/components/TextEditor.vue'
 
-// Handling Unlicensed Froala Editor
-watch(
-  textModel,
-  (val) => {
-    if (val.includes('<p data-f-id="pbf"')) {
-      // split the string
-      const split = val.split('<p data-f-id="pbf"');
-      // get the first index
-      textModel.value = split[0];
-    }
-  },
-)
+const textModel = ref<string>('');
 </script>

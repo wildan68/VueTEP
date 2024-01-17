@@ -11,7 +11,7 @@ import IconSpeakerphone from '~icons/tabler/speakerphone'
 import IconExternalLink from '~icons/tabler/external-link'
 import IconUpload from '~icons/tabler/upload'
 import IconFirebase from '~icons/tabler/brand-firebase'
-import IconSettings from '~icons/tabler/settings'
+import IconInstallation from '~icons/tabler/michelin-star'
 import IconSlideshow from '~icons/tabler/slideshow'
 import IconEdit from '~icons/tabler/edit'
 import router from "@/router"
@@ -36,7 +36,7 @@ export const useSidebar = () => {
     }, {
       key: 'installation',
       label: 'Installation',
-      icon: IconSettings,
+      icon: IconInstallation,
       action: () => router.push('/installation'),
     }, {
       key: 'components-group',
@@ -157,14 +157,22 @@ export const useSidebar = () => {
         {
           key: 'basic',
           label: 'Basic',
+          icon: IconPoint,
         }, {
           key: 'validation',
           label: 'Validation',
+          icon: IconPoint,
           action: () => router.push('/forms/validation'),
         }, {
           key: 'stepper',
           label: 'Stepper',
+          icon: IconPoint,
           action: () => router.push('/forms/stepper'),
+        }, {
+          key: 'inlinedit',
+          label: 'Inline Edit',
+          icon: IconPoint,
+          action: () => router.push('/forms/inlinedit'),
         },
       ],
     }, {
