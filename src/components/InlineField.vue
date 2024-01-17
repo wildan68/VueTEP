@@ -82,7 +82,7 @@
         class="flex flex-col gap-2"
       >
         <!-- Model: For Direct Parent Value Model to Slot Value Model -->
-        <!-- onUpdate: For trigger update Value Model from Slot to Parent -->
+        <!-- onUpdate: For trigger update Value Model from Slot to Parent  -->
         <slot
           name="field"
           :model="modelTemp"
