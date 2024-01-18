@@ -107,7 +107,7 @@ export default defineConfig({
         ...routes,
       ],
     }),
-    splitVendorChunkPlugin(),
+    // splitVendorChunkPlugin(),
     Unfonts({
       google: {
         families: [
