@@ -9,7 +9,7 @@
       <ContentCard
         title="Default"
       >
-        <div class="overflow-hidden rounded-md bg-primary">
+        <div class="overflow-hidden rounded-md bg-gradient-to-br from-primary to-primary/50">
           <Swiper
             :modules="defaultSlideModules"
             pagination
@@ -40,7 +40,7 @@
             <SwiperSlide
               v-for="slide in defaultSlide"
               :key="slide.label"
-              class="p-6 min-h-[150px] flex flex-col gap-6"
+              class="py-6 px-14 min-h-[150px] flex flex-col gap-6"
             >
               <span class="text-2xl font-bold">{{ slide.label }}</span>
 
@@ -48,19 +48,21 @@
             </SwiperSlide>
           </Swiper>
 
-          <div class="absolute left-[-14px] z-10 sw-prev">
+          <div class="absolute left-0 z-10 sw-prev">
             <ElButton
-              plain
+              text
               circle
+              class="shadow-md"
             >
               <IconTablerChevronLeft />
             </ElButton>
           </div>
 
-          <div class="absolute right-[-14px] z-10 sw-next">
+          <div class="absolute right-0 z-10 sw-next">
             <ElButton
-              plain
+              text
               circle
+              class="shadow-md"
             >
               <IconTablerChevronRight />
             </ElButton>
