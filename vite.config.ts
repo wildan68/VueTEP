@@ -160,6 +160,7 @@ export default defineConfig({
       '@fb': fileURLToPath(new URL('./src/plugins/firebase.ts', import.meta.url)),
     },
   },
+  base: './',
   build: {
     chunkSizeWarningLimit: 5000,
   },
