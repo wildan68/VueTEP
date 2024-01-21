@@ -157,13 +157,3 @@ const onSidebarHover = () => {
   scopedHovered.value = !scopedHovered.value
 }
 </script>
-
-<style scoped lang="scss"> 
-.hide-scrollbar {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-</style>

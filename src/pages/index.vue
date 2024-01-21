@@ -29,6 +29,14 @@
       <Overview />
       <Revenue />
     </div>
+
+    <div class="grid grid-cols-3 gap-6">
+      <div class="col-span-2">
+        <SalesReport />
+      </div>
+
+      <SalesByCountry />
+    </div>
   </div>
 </template>
 
@@ -37,4 +45,6 @@ import PlanetDraw from '@images/planet-draw.png'
 import SummarySlide from '@/views/demos/dashboard/SummarySlide.vue'
 import Overview from '@/views/demos/dashboard/Overview.vue';
 import Revenue from '@/views/demos/dashboard/Revenue.vue';
+import SalesReport from '@/views/demos/dashboard/SalesReport.vue';
+import SalesByCountry from '@/views/demos/dashboard/SalesByCountry.vue';
 </script>
