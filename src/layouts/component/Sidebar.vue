@@ -6,13 +6,18 @@
     @mouseleave.prevent="onSidebarHover"
     @mouseenter.prevent="onSidebarHover"
   >
-    <div class="flex flex-col gap-6">
-      <span class="w-full text-lg font-extrabold text-center text-primary">VueTEP</span>
+    <div class="flex flex-col gap-3">
+      <div class="flex justify-center">
+        <img
+          :src="AppMainLogo"
+          width="90"
+        > 
+      </div>
 
       <!-- Menu -->
       <nav
         ref="navRef"
-        class="relative h-[calc(100vh-74px)] overflow-y-auto transition-all duration-300"
+        class="relative h-[calc(100vh-74px)] overflow-y-auto transition-all duration-300 pb-4"
         :class="[{ 'pr-3' : !sidebarCollapsed || scopedHovered }, navScrolling]"
       >
         <ul class="flex flex-col gap-2">
@@ -112,6 +117,8 @@
 <script setup lang="ts">
 import { useSidebar } from '@core/sidebarmenu'
 import type { ISidebar } from '@/types/sidebar';
+import MainLogo from '@images/main-logo.png'
+import { useApp } from '@core/app'
 
 const { 
   sidebarMenu, 
@@ -120,6 +127,8 @@ const {
   sidebarCollapsed, 
   sidebarHovered, 
 } = useSidebar()
+
+const { AppMainLogo } = useApp()
 
 const route = useRoute()
 const scopedHovered = ref<boolean>(false)

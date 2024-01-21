@@ -26,7 +26,7 @@
           :lat-lng="markerLatLng"
         >
           <LPopup>
-            <span class="font-semibold text-primary">VueTEP Maps</span>
+            <span class="font-semibold text-primary">{{ appName }} Maps</span>
             <p class="text-xs">
               This is a popup
             </p>
@@ -51,6 +51,10 @@
 </template>
 
 <script setup lang="ts">
+import { useApp } from '@core/app'
+
+const { appName } = useApp()
+
 const mapLoaded = ref<boolean>(false)
 const zoom = ref<number>(17)
 const markerLatLng = ref<number[]>([-6.175403, 106.824584])

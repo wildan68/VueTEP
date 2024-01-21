@@ -1,7 +1,7 @@
 <template>
   <ContentCard
     title="Firebase"
-    subtitle="Integrating Firebase with VueTEP"
+    :subtitle="`Integrating Firebase with ${appName}`"
     transparent
   >
     <div class="grid grid-flow-row grid-cols-2 gap-6">
@@ -107,7 +107,9 @@
 
 <script setup lang="ts">
 import { useFiresbaseServices } from '@composables/firebaseServices';
+import { useApp } from '@core/app';
 
+const { appName } = useApp()
 const { add, getAll } = useFiresbaseServices();
 const forms = reactive<{ username: string; email: string}>({
   username: '',

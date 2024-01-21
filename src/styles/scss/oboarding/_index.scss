@@ -1,0 +1,8 @@
+:root {
+  --v-onboarding-overlay-z: 100;
+  --v-onboarding-step-z: 101;
+}
+
+.v-onboarding-btn-primary {
+  background: var(--el-color-primary) !important;
+}

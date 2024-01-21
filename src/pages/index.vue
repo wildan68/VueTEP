@@ -1,10 +1,15 @@
 <template>
+  <VOnboardingWrapper
+    ref="wrapper"
+    :steps="steps"
+  />
+    
   <div class="flex flex-col gap-6">
     <div class="grid grid-cols-3 gap-6">
       <ContentCard class="col-span-2">
         <div class="flex flex-col flex-1 gap-4">
           <h2 class="text-2xl font-bold text-primary">
-            Welcome to VueTEP ✨
+            Welcome to {{ appName }} ✨
           </h2>
           <span class="text-sm text-placeholder">
             Vue, Tailwind, Element Plus and Extend Component's combination for the best developing frontend experience
@@ -22,12 +27,15 @@
     </div>
 
     <div class="grid grid-cols-4 gap-6">
-      <div class="col-span-2">
+      <div
+        id="summary"
+        class="col-span-2"
+      >
         <SummarySlide />
       </div>
 
-      <Overview />
-      <Revenue />
+      <Overview id="overview" />
+      <Revenue id="revenue" />
     </div>
 
     <div class="grid grid-cols-3 gap-6">
@@ -47,4 +55,17 @@ import Overview from '@/views/demos/dashboard/Overview.vue';
 import Revenue from '@/views/demos/dashboard/Revenue.vue';
 import SalesReport from '@/views/demos/dashboard/SalesReport.vue';
 import SalesByCountry from '@/views/demos/dashboard/SalesByCountry.vue';
+import { useApp } from '@core/app';
+
+const { appName } = useApp()
+
+const wrapper = ref(null)
+const { start, goToStep, finish } = useVOnboarding(wrapper)
+const steps = [
+  { attachTo: { element: '#summary' }, content: { title: 'Summary!' } },
+  { attachTo: { element: '#overview' }, content: { title: 'Overview!' } },
+  { attachTo: { element: '#revenue' }, content: { title: 'Revenue!' } },
+]
+
+onMounted(() => start())
 </script>

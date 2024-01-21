@@ -11,6 +11,7 @@ import PasswordMeter from '@/plugins/password-meter'
 import HighlightJs from '@/plugins/highlightjs'
 import Swiper from '@/plugins/swiper'
 import Froala from '@/plugins/froala'
+import Onboarding from '@/plugins/onboarding'
 
 import App from './App.vue'
 import router from './router'
@@ -45,5 +46,7 @@ app.use(HighlightJs)
 app.use(Swiper)
 
 app.use(Froala)
+
+app.use(Onboarding)
 
 app.mount('#app')
