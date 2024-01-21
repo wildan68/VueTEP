@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-6">
-    <div class="flex items-stretch gap-6">
-      <ContentCard>
+    <div class="grid grid-cols-3 gap-6">
+      <ContentCard class="col-span-2">
         <div class="flex flex-col flex-1 gap-4">
           <h2 class="text-2xl font-bold text-primary">
             Welcome to VueTEP ✨
@@ -12,7 +12,7 @@
         </div>
       </ContentCard>
 
-      <div class="relative flex items-center w-1/3 p-6 overflow-hidden text-white rounded-lg bg-gradient-to-r from-primary/80 to-primary">
+      <div class="relative flex items-center p-6 overflow-hidden text-white rounded-lg bg-gradient-to-r from-primary/80 to-primary">
         <img
           :src="PlanetDraw"
           class="absolute top-0 bottom-0 right-0 w-[50%] select-none"

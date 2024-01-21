@@ -7,13 +7,15 @@
         marginLeft: sidebarWidth + 'px',
         minHeight: height - 120 + 'px',
       }"
-      class="p-6 mt-3 transition-all duration-300"
+      class="flex justify-center p-6 mt-3 transition-all duration-300"
     >
       <RouterView v-slot="{ Component }">
         <TransitionExpand
           @before-enter="loadPage"
         >
-          <Component :is="Component" />
+          <div class="w-full max-w-screen-xl">
+            <Component :is="Component" />
+          </div>
         </TransitionExpand>
       </RouterView>
     </div>
