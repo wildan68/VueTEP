@@ -116,34 +116,34 @@ export default defineConfig({
         ],
       },
     }),
-    VitePWA({ 
-      base: '/',
-      srcDir: 'src',
-      filename: 'sw.ts',
-      injectRegister: 'script',
-      includeAssets: ['/icon.png'],
-      strategies: 'injectManifest',
-      manifest: {
-        name: 'VueTEP - Vuejs Element Plus and TailwindCSS UI',
-        short_name: 'VueTEP',
-        theme_color: '#ffffff',
-        start_url: '/',
-        display: 'standalone',
-        background_color: '#ffffff',
-        icons: [
-          {
-            src: '/icon/mipmap-xxxhdpi/icon.png',
-            sizes: '192x192',
-            type: 'image/png',
-          }, {
-            src: '/icon/mipmap-xxxhdpi/icon.png',
-            sizes: '192x192',
-            type: 'image/png',
-            purpose: 'any maskable',
-          },
-        ],
-      },
-    }),
+    // VitePWA({ 
+    //   base: '/',
+    //   srcDir: 'src',
+    //   filename: 'sw.ts',
+    //   injectRegister: 'script',
+    //   includeAssets: ['/icon.png'],
+    //   strategies: 'injectManifest',
+    //   manifest: {
+    //     name: 'VueTEP - Vuejs Element Plus and TailwindCSS UI',
+    //     short_name: 'VueTEP',
+    //     theme_color: '#ffffff',
+    //     start_url: '/',
+    //     display: 'standalone',
+    //     background_color: '#ffffff',
+    //     icons: [
+    //       {
+    //         src: '/icon/mipmap-xxxhdpi/icon.png',
+    //         sizes: '192x192',
+    //         type: 'image/png',
+    //       }, {
+    //         src: '/icon/mipmap-xxxhdpi/icon.png',
+    //         sizes: '192x192',
+    //         type: 'image/png',
+    //         purpose: 'any maskable',
+    //       },
+    //     ],
+    //   },
+    // }),
   ],
   define: { 'process.env': {} },
   resolve: {
