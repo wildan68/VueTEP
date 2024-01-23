@@ -71,7 +71,7 @@ export default defineConfig({
           ['Scrollbar', 'SwiperScrollbar'],
         ],
         'vue-froala-wysiwyg': [['default', 'Froala']],
-        'v-onboarding': ['VOnboardingWrapper', 'useVOnboarding'],
+        'v-onboarding': ['VOnboardingWrapper', 'VOnboardingStep', 'useVOnboarding'],
       }],
       vueTemplate: true,
       resolvers: [ElementPlusResolver()],

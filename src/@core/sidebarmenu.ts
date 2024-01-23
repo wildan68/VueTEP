@@ -14,6 +14,7 @@ import IconFirebase from '~icons/tabler/brand-firebase'
 import IconInstallation from '~icons/tabler/michelin-star'
 import IconSlideshow from '~icons/tabler/slideshow'
 import IconEdit from '~icons/tabler/edit'
+import IconChalkBoard from '~icons/tabler/chalkboard'
 import router from "@/router"
 import { createVNode, render } from "vue"
 import { ElDialog } from "element-plus"
@@ -27,6 +28,14 @@ export const useSidebar = () => {
   const sidebarCollapsed = computed<boolean>(() => store[Getters.GET_COLLAPSED])
   const sidebarHovered = computed<boolean>(() => store[Getters.GET_SIDEBAR_HOVERED])
 
+  /**
+   * Sidebar Menu
+   * @type {ISidebar[]}
+   * key: string - must be the same as the component name in pages
+   * label: string - label for the menu
+   * icon: any - icon for the menu
+   * action: () => void - action when menu is clicked
+   */
   const sidebarMenu = reactive<ISidebar[]>([
     {
       key: 'dashboard',
@@ -125,6 +134,11 @@ export const useSidebar = () => {
       label: 'Text Editor',
       icon: IconEdit,
       action: () => router.push('/texteditor'),
+    }, {
+      key: 'onboarding',
+      label: 'Onboarding',
+      icon: IconChalkBoard,
+      action: () => router.push('/onboarding'),
     }, {
       key: 'vnode',
       label: 'Virtual Node',

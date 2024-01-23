@@ -2,7 +2,57 @@
   <VOnboardingWrapper
     ref="wrapper"
     :steps="steps"
-  />
+    :options="options"
+  >
+    <template #default="{ previous, next, step, isFirst, isLast }">
+      <VOnboardingStep>
+        <div class="flex flex-col gap-6 p-6 rounded-md bg-background">
+          <div
+            v-if="step.content"
+            class="flex flex-col gap-4"
+          >
+            <span class="text-lg font-semibold">
+              {{ step.content.title }}
+            </span>
+
+            <span class="text-sm text-placeholder">
+              {{ step.content.body }}
+            </span>
+          </div>
+
+          <div class="flex justify-end">
+            <ElButton
+              v-if="!isFirst"
+              v-ripple
+              class="mr-2"
+              text
+              @click="previous"
+            >
+              Previous
+            </ElButton>
+
+            <ElButton
+              v-if="!isLast"
+              v-ripple
+              type="primary"
+              @click="next"
+            >
+              Next
+            </ElButton>
+
+            <ElButton
+              v-if="isLast"
+              v-ripple
+              type="primary"
+              @click="finishedOnboarding"
+            >
+              Finish
+            </ElButton>
+          </div>
+        </div>
+      </VOnboardingStep>
+    </template>
+  </VOnboardingWrapper>
     
   <div class="flex flex-col gap-6">
     <div class="grid grid-cols-3 gap-6">
@@ -27,11 +77,8 @@
     </div>
 
     <div class="grid grid-cols-4 gap-6">
-      <div
-        id="summary"
-        class="col-span-2"
-      >
-        <SummarySlide />
+      <div class="col-span-2">
+        <SummarySlide id="summary" />
       </div>
 
       <Overview id="overview" />
@@ -60,12 +107,41 @@ import { useApp } from '@core/app';
 const { appName } = useApp()
 
 const wrapper = ref(null)
-const { start, goToStep, finish } = useVOnboarding(wrapper)
+const { start, finish } = useVOnboarding(wrapper)
 const steps = [
-  { attachTo: { element: '#summary' }, content: { title: 'Summary!' } },
-  { attachTo: { element: '#overview' }, content: { title: 'Overview!' } },
-  { attachTo: { element: '#revenue' }, content: { title: 'Revenue!' } },
+  { 
+    attachTo: { element: '#summary' }, 
+    content: { 
+      title: 'Summary!', 
+      body: 'This is the summary of your sales',
+    }, 
+  },
+  { attachTo: { element: '#overview' }, 
+    content: { 
+      title: 'Overview!', 
+      body: 'This is the overview of your sales',
+    }, 
+  },
+  { attachTo: { element: '#revenue' }, 
+    content: { 
+      title: 'Revenue!', 
+      body: 'This is the revenue of your sales',
+    }, 
+  },
 ]
 
-onMounted(() => start())
+const options = {
+  popper: {
+    modifiers: [{ name: 'offset', options: { offset: [0, 8] } }],
+  },
+}
+
+const isFinishedOnboarding = (): boolean => localStorage.getItem('finishedOnboarding') === 'true'
+
+const finishedOnboarding = () => {
+  localStorage.setItem('finishedOnboarding', 'true')
+  finish()
+}
+
+onMounted(() => !isFinishedOnboarding() && start())
 </script>
