@@ -15,6 +15,7 @@ import IconInstallation from '~icons/tabler/michelin-star'
 import IconSlideshow from '~icons/tabler/slideshow'
 import IconEdit from '~icons/tabler/edit'
 import IconChalkBoard from '~icons/tabler/chalkboard'
+import IconLayoutBoard from '~icons/tabler/layout-board'
 import router from "@/router"
 import { createVNode, render } from "vue"
 import { ElDialog } from "element-plus"
@@ -35,6 +36,7 @@ export const useSidebar = () => {
    * label: string - label for the menu
    * icon: any - icon for the menu
    * action: () => void - action when menu is clicked.
+   * isGroup: boolean - if true, it will be a group menu
    */
   const sidebarMenu = reactive<ISidebar[]>([
     {
@@ -47,6 +49,28 @@ export const useSidebar = () => {
       label: 'Installation',
       icon: IconInstallation,
       action: () => router.push('/installation'),
+    }, {
+      key: 'pages-group',
+      label: 'Pages & Layouts',
+      isGroup: true,
+    }, {
+      key: 'pages',
+      label: 'Pages',
+      icon: IconLayoutBoard,
+      childrenOpen: false,
+      children: [
+        {
+          key: 'login',
+          label: 'Login Page',
+          icon: IconPoint,
+          action: () => router.push('/pages/login'),
+        }, {
+          key: 'register',
+          label: 'Register Page',
+          icon: IconPoint,
+          action: () => router.push('/pages/register'),
+        },
+      ],
     }, {
       key: 'components-group',
       label: 'All Components',

@@ -117,7 +117,6 @@
 <script setup lang="ts">
 import { useSidebar } from '@core/sidebarmenu'
 import type { ISidebar } from '@/types/sidebar';
-import MainLogo from '@images/main-logo.png'
 import { useApp } from '@core/app'
 
 const { 

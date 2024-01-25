@@ -44,6 +44,10 @@ a {
   background-color: var(--el-text-color-placeholder);
 }
 
+label {
+  font-size: 12px !important;
+}
+
 .leaflet-control-attribution.leaflet-control {
   display: none !important;
 }
