@@ -171,7 +171,7 @@
           >
             <Icon
               icon="bi:github"
-              class="text-3xl text-black"
+              class="text-3xl text-black dark:text-white"
             />
           </ElButton>
   
@@ -184,7 +184,7 @@
           >
             <Icon
               icon="ic:baseline-apple"
-              class="text-3xl text-black"
+              class="text-3xl text-black dark:text-white"
             />
           </ElButton>
         </div>

@@ -69,6 +69,11 @@ export const useSidebar = () => {
           label: 'Register Page',
           icon: IconPoint,
           action: () => router.push('/pages/register'),
+        }, {
+          key: '404',
+          label: '404 Page',
+          icon: IconPoint,
+          action: () => router.push('/pages/404'),
         },
       ],
     }, {
