@@ -34,7 +34,7 @@ export const useSidebar = () => {
    * key: string - must be the same as the component name in pages
    * label: string - label for the menu
    * icon: any - icon for the menu
-   * action: () => void - action when menu is clicked
+   * action: () => void - action when menu is clicked.
    */
   const sidebarMenu = reactive<ISidebar[]>([
     {
