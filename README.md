@@ -1,48 +1,60 @@
 # VueTEP ✨
 
+<div style="display: flex; jutify-content: center"><img src="https://vuetep.vercel.app/main-logo.png" width="200"/></div>
+
 Simple and Powerfull Element Plus UI and Tailwind CSS with extend Components, Easy to use!.
 
-## Recommended IDE Setup
+## Tech Stack
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+<img width="24" height="24" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-vuejs-an-open-source-javascript-framework-for-building-user-interfaces-and-single-page-applications-logo-color-tal-revivo.png" alt="external-vuejs-an-open-source-javascript-framework-for-building-user-interfaces-and-single-page-applications-logo-color-tal-revivo"/>
 
-## Type Support for `.vue` Imports in TS
+<img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/>
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Features [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) 
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+- All Element Plus Component
+- TailwindCSS Integrations
+- Dark and Light Mode
+- Color Theme
+- Charts (Apex Charts)
+- Maps (Leaflet)
+- Toast
+- File Uploader Component
+- Carousel (Swiper)
+- Text Editor WYSIWYG (Froala)
+- Onboarding Component
+- Forms Validation (VeeValidate)
+- Firebase Integrations (FCM, Firestore, etc)
+- Password Meter Component
+- Pages Examples (Login, Register, 404)
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## <img width="48" height="48" src="https://img.icons8.com/fluency/48/vite.png" alt="vite"/>  VITE
 
-## Customize configuration
+Several Vite plugins in VueTEP
+- JSX Support
+- AutoImport (Components & Func)
+- AutoLayouts
+- Router with Pages Folder same with Nuxt
+- Icons Component
+- Ufont
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+## Installation
 
-```sh
-npm install
+Install Dependecy VueTEP with npm
+
+```bash
+  npm install
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
+Run Development VueTEP
+```bash
+  npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+Run Build VueTEP
+```bash
+  npm run build
 ```
 
 ### Issue Unplugin Icons
