@@ -19,7 +19,7 @@ It means a lot to me
     src="https://storage.ko-fi.com/cdn/kofi5.png?v=3"
     border="0"
     alt="Buy Me a Coffee at ko-fi.com"
-  >
+  />
 </a>
 
 ## Tech Stack
