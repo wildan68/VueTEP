@@ -1,11 +1,14 @@
 <template>
-  <Froala v-model:value="modelVal" />
+  <template v-if="model === 'froala'">
+    <Froala v-model:value="modelVal" />
+  </template>
 </template>
 
 <script setup lang="ts">
 interface IProps {
   modelValue?: string
   value?: string
+  model?: 'froala'
 }
 
 interface IEmits {
@@ -16,6 +19,7 @@ interface IEmits {
 const props = withDefaults(defineProps<IProps>(), {
   modelValue: '',
   value: '',
+  model: 'froala',
 })
 
 const emit = defineEmits<IEmits>()

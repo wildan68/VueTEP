@@ -162,7 +162,20 @@ export const useSidebar = () => {
       key: 'texteditor',
       label: 'Text Editor',
       icon: IconEdit,
-      action: () => router.push('/texteditor'),
+      childrenOpen: false,
+      children: [
+        {
+          key: 'editorjs',
+          label: 'Editor JS',
+          icon: IconPoint,
+          action: () => router.push('/texteditor/editorjs'),
+        }, {
+          key: 'froala',
+          label: 'Froala',
+          icon: IconPoint,
+          action: () => router.push('/texteditor/froala'),
+        },
+      ],
     }, {
       key: 'onboarding',
       label: 'Onboarding',

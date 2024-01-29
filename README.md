@@ -4,7 +4,7 @@
 
 Simple and Powerfull Element Plus UI and Tailwind CSS with extend Components, Easy to use!.
 
-## Help me by Donating
+## Support
 
 It means a lot to me
 

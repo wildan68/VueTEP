@@ -8,7 +8,10 @@
       <ContentCard
         title="Default Editor"
       >
-        <TextEditor v-model="textModel" />
+        <TextEditor
+          v-model="textModel"
+          model="froala"
+        />
       </ContentCard>
 
       <ContentCard
