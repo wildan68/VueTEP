@@ -5,11 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import { firebaseCloudMessaging } from '@fb'
+// import { firebaseCloudMessaging } from '@fb'
 
-const { getToken } = firebaseCloudMessaging()
+// const { getToken } = firebaseCloudMessaging()
 
-
-
-onMounted(async() => console.log('fcm token : ', await getToken))
+// onMounted(async() => console.log('fcm token : ', await getToken))
 </script>
