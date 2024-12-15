@@ -16,6 +16,7 @@ import IconSlideshow from '~icons/tabler/slideshow'
 import IconEdit from '~icons/tabler/edit'
 import IconChalkBoard from '~icons/tabler/chalkboard'
 import IconLayoutBoard from '~icons/tabler/layout-board'
+import IconBraces from '~icons/tabler/braces'
 import router from "@/router"
 import { createVNode, render } from "vue"
 import { ElDialog } from "element-plus"
@@ -211,9 +212,10 @@ export const useSidebar = () => {
       childrenOpen: false,
       children: [
         {
-          key: 'basic',
-          label: 'Basic',
-          icon: IconPoint,
+          key: 'form-schema',
+          label: 'Form Schema',
+          icon: IconBraces,
+          action: () => router.push('/form-schema'),
         }, {
           key: 'validation',
           label: 'Validation',

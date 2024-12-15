@@ -13,6 +13,8 @@ import Swiper from '@/plugins/swiper'
 import Froala from '@/plugins/froala'
 import Onboarding from '@/plugins/onboarding'
 import JsonViewer from '@/plugins/jsonviewer'
+import FormSchema from '@/plugins/form-schema'
+import MonacoEditor from '@/plugins/monaco-editor'
 
 import App from './App.vue'
 import router from './router'
@@ -51,5 +53,9 @@ app.use(Froala)
 app.use(Onboarding)
 
 app.use(JsonViewer)
+
+app.use(FormSchema)
+
+app.use(MonacoEditor)
 
 app.mount('#app')
