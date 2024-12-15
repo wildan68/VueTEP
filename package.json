@@ -28,7 +28,7 @@
     "@vueuse/core": "^10.7.0",
     "@vueuse/math": "^9.5.0",
     "@wildanrizky/vue-form-schema": "^1.0.2-beta",
-    "apexcharts": "^3.44.1",
+    "apexcharts": "^4.2.0",
     "axios": "^1.6.2",
     "country-state-city": "^3.2.1",
     "dayjs": "^1.11.10",
@@ -49,7 +49,7 @@
     "vue-json-viewer": "^3.0.4",
     "vue-router": "^4.2.5",
     "vue-simple-password-meter": "^1.3.4",
-    "vue3-apexcharts": "^1.4.4",
+    "vue3-apexcharts": "^1.8.0",
     "vue3-highlightjs": "^1.0.5",
     "vue3-toastify": "^0.1.14",
     "vue3-whr-ripple-directive": "^1.0.0"
