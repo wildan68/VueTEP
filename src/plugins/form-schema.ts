@@ -1,6 +1,14 @@
 import type { App } from 'vue'
 import FormSchema from '@wildanrizky/vue-form-schema'
-import { ElInput, ElButton, ElCheckbox } from 'element-plus'
+import { 
+  ElInput, 
+  ElButton, 
+  ElCheckbox, 
+  ElSelect,
+  ElOption,
+  ElRadioGroup,
+  ElRadio,
+} from 'element-plus'
 
 const defineFormSchema = (): { install(app: App): void } => {
   return {
@@ -10,6 +18,10 @@ const defineFormSchema = (): { install(app: App): void } => {
           INPUT: ElInput,
           BUTTON: ElButton,
           CHECKBOX: ElCheckbox,
+          SELECT: ElSelect,
+          OPTION: ElOption,
+          RADIO_GROUP: ElRadioGroup,
+          RADIO: ElRadio,
         },
       })
     },

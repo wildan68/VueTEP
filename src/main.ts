@@ -15,6 +15,7 @@ import Onboarding from '@/plugins/onboarding'
 import JsonViewer from '@/plugins/jsonviewer'
 import FormSchema from '@/plugins/form-schema'
 import MonacoEditor from '@/plugins/monaco-editor'
+import Draggable from '@/plugins/draggable'
 
 import App from './App.vue'
 import router from './router'
@@ -57,5 +58,7 @@ app.use(JsonViewer)
 app.use(FormSchema)
 
 app.use(MonacoEditor)
+
+app.use(Draggable)
 
 app.mount('#app')
